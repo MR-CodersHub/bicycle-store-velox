@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Velox Cycles — Chennai's premier bicycle and accessories store. Shop Trek, Specialized, Cannondale, Giant, Shimano. Road bikes, mountain bikes, hybrids, electric e-bikes, helmets, lights, locks, and certified service appointments." />
+  <title>Velox Cycles — Precision Bicycles & Accessories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" href="./assets/logo.png" />
+  <script>
+    /* Minimal theme boot to avoid flash — full logic in js/main.js */
+    try {
+      var t = localStorage.getItem('stride-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('stride-dir');
+      if (d) document.documentElement.setAttribute('dir', d);
+    } catch (e) { }
+  </script>
+</head>
+
+<body>
+  <!-- navbar.js injects the shared utility bar, header and footer here -->
+
+  <main id="top">
+    <!-- ===============================================================
+           HERO (Full-Bleed Editorial — Velox Cycles)
+           ============================================================ -->
+    <section class="hero hero--editorial" aria-labelledby="hero-title">
+      <div class="hero__bg-media">
+        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1600&auto=format&fit=crop"
+          alt="Cyclist riding aero carbon road bike on open coastal tarmac" class="hero__bg-img" loading="eager" decoding="async" />
+        <div class="hero__bg-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__content-wrap">
+        <!-- Main Editorial Content (Left side) -->
+        <div class="hero__copy hero__copy--editorial" data-reveal>
+          <span class="hero__eyebrow-editorial">
+            <span class="hero__eyebrow-dot-white"></span>
+            VELOX CYCLES · 2026 FLEET
+          </span>
+
+          <h1 id="hero-title" class="hero__title hero__title--editorial">
+            Velox<span style="color: var(--accent);">.</span><br />
+            Ride Faster. Go Further.
+          </h1>
+
+          <p class="hero__lede-editorial">
+            Carbon road racers, trail-crushing MTBs, lightweight commuters, and smart e-bikes.<br />
+            Engineered for pure adrenaline and tuned by certified master mechanics.
+          </p>
+
+          <div class="hero__ctas hero__ctas--editorial" style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+            <a href="./pages/bikes.html" class="btn hero__btn-pill">
+              Explore Bikes & Accessories <span aria-hidden="true">→</span>
+            </a>
+            <a href="./pages/booking.html" class="btn hero__btn-pill" style="background: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; box-shadow: 0 8px 24px rgba(85, 107, 47, 0.45);">
+              Book Service Appointment <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom 3-Column Feature Row -->
+        <div class="hero__bottom-row" data-reveal>
+          <div class="hero__feature-col">
+            <h3 class="hero__feature-title">350+ BIKES IN STOCK</h3>
+            <p class="hero__feature-desc">Road, Mountain, Hybrid, Gravel, E-Bikes & Kids from top global brands.</p>
+          </div>
+          <div class="hero__feature-col">
+            <h3 class="hero__feature-title">SHIMANO SERVICE CENTER</h3>
+            <p class="hero__feature-desc">Certified workshop with 24-hour turnaround tune-up guarantee.</p>
+          </div>
+          <div class="hero__feature-col">
+            <h3 class="hero__feature-title">PRECISION 3D BIKE FIT</h3>
+            <p class="hero__feature-desc">Laser saddle, cleat & reach alignment free with every bicycle purchase.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           CATEGORY QUICK-NAV STRIP
+           ============================================================ -->
+    <section class="section section--soft" style="padding: 2.5rem 0; border-bottom: 1px solid var(--border);" aria-label="Bicycle categories">
+      <div class="wrap">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; text-align: center;">
+          <a href="./pages/bikes.html?cat=road" class="chip" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 600;">
+            Road Bikes
+          </a>
+          <a href="./pages/bikes.html?cat=mountain" class="chip" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 600;">
+            Mountain MTBs
+          </a>
+          <a href="./pages/bikes.html?cat=hybrid" class="chip" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 600;">
+            Hybrid & City
+          </a>
+          <a href="./pages/bikes.html?cat=electric" class="chip" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 600;">
+            Electric E-Bikes
+          </a>
+          <a href="./pages/bikes.html?cat=kids" class="chip" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 600;">
+            Kids Bikes
+          </a>
+          <a href="./pages/accessories.html" class="chip" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 600;">
+            Gear & Apparel
+          </a>
+          <a href="./pages/services.html" class="chip" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 600;">
+            Service Rates
+          </a>
+          <a href="./pages/booking.html" class="chip chip--accent is-active" style="justify-content: center; padding: 0.85rem 1rem; text-decoration: none; font-weight: 700;">
+            Book Service
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           PRODUCT GRID (Bestselling Bikes & Accessories)
+           ============================================================ -->
+    <section class="catalog" aria-labelledby="catalog-title">
+      <header class="catalog__toolbar" data-reveal>
+        <div>
+          <span class="small-caps" style="color: var(--accent); font-weight: 700; letter-spacing: 0.08em;">Bestsellers · 2026</span>
+          <h2 id="catalog-title" class="catalog__title" style="margin-top: 0.25rem;">
+            <span data-catalog-label>Bestselling Bikes & Accessories</span>
+            <span class="catalog__count" data-results-count>12 models</span>
+          </h2>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <div class="chip-bar__inner" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="chip is-active" data-filter="all" type="button">All <span class="chip__count" data-count-for="all">12</span></button>
+            <button class="chip" data-filter="road" type="button">Road <span class="chip__count" data-count-for="road">3</span></button>
+            <button class="chip" data-filter="mountain" type="button">MTB <span class="chip__count" data-count-for="mountain">3</span></button>
+            <button class="chip" data-filter="hybrid" type="button">Hybrid <span class="chip__count" data-count-for="hybrid">3</span></button>
+            <button class="chip" data-filter="electric" type="button">E-Bikes <span class="chip__count" data-count-for="electric">3</span></button>
+            <button class="chip" data-filter="kids" type="button">Kids <span class="chip__count" data-count-for="kids">3</span></button>
+            <button class="chip" data-filter="accessories" type="button">Accessories <span class="chip__count" data-count-for="accessories">9</span></button>
+            <button class="chip chip--accent" data-filter="sale" type="button">Sale <span class="chip__count" data-count-for="sale">8</span></button>
+          </div>
+
+          <label class="catalog__sort">
+            <span class="small-caps">Sort</span>
+            <select data-sort>
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest Fleet</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <div class="product-grid" data-product-grid aria-live="polite">
+        <!-- Cards rendered by script.js -->
+      </div>
+
+      <p class="catalog__empty" data-empty hidden>
+        No bicycles or accessories match that filter. Try selecting another category above.
+      </p>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="./pages/bikes.html" class="btn btn--primary" style="margin-right: 0.75rem; padding: 0.85rem 2rem;">
+          View Complete Bicycle Showroom <span aria-hidden="true">→</span>
+        </a>
+        <a href="./pages/accessories.html" class="btn btn--ghost" style="padding: 0.85rem 2rem;">
+          Browse Helmets, Lights & Apparel <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           WORKSHOP / REPAIR SERVICES CALLOUT BANNER
+           ============================================================ -->
+    <section class="section section--soft" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="wrap" data-reveal>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center;">
+          <div>
+            <span class="sec-eyebrow" style="color: var(--accent); font-weight: 700;">Shimano & SRAM Certified Workshop</span>
+            <h2 class="sec-title" style="margin-top: 0.5rem; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.15;">
+              Precision Maintenance.<br />Guaranteed 24-Hour Turnaround.
+            </h2>
+            <p class="sec-lede" style="margin-top: 1rem; color: var(--ink-soft); line-height: 1.6;">
+              Keep your shifting crisp and hydraulic brakes razor-sharp. Our master technicians service every bike with ultrasonic drivetrain baths, digital laser wheel truing, and authorized diagnostic scans.
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="./pages/booking.html" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff;">
+                Book a Service Slot <span aria-hidden="true">→</span>
+              </a>
+              <a href="./pages/services.html" class="btn btn--ghost">
+                View Service Pricing & Packages
+              </a>
+            </div>
+          </div>
+          <div style="background: var(--bg-soft); padding: 2rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--ink);">Popular Workshop Services</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 0.65rem;">
+                <div>
+                  <strong style="color: var(--ink);">Safety Tune-Up</strong>
+                  <div style="font-size: 0.85rem; color: var(--ink-soft);">Brakes, gears, chain lube & 25-pt safety check</div>
+                </div>
+                <span style="font-weight: 700; color: var(--accent); font-family: var(--font-mono);">₹1,499</span>
+              </li>
+              <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 0.65rem;">
+                <div>
+                  <strong style="color: var(--ink);">Comprehensive Performance Tune</strong>
+                  <div style="font-size: 0.85rem; color: var(--ink-soft);">Ultrasonic drivetrain bath + wheel truing</div>
+                </div>
+                <span style="font-weight: 700; color: var(--accent); font-family: var(--font-mono);">₹2,999</span>
+              </li>
+              <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 0.65rem;">
+                <div>
+                  <strong style="color: var(--ink);">Velox Pro Overhaul</strong>
+                  <div style="font-size: 0.85rem; color: var(--ink-soft);">Bare-frame strip down, fresh cables & hydraulic bleed</div>
+                </div>
+                <span style="font-weight: 700; color: var(--accent); font-family: var(--font-mono);">₹5,499</span>
+              </li>
+              <li style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <strong style="color: var(--ink);">E-Bike Diagnostic & Motor Scan</strong>
+                  <div style="font-size: 0.85rem; color: var(--ink-soft);">Bosch / Shimano firmware updates & battery health</div>
+                </div>
+                <span style="font-weight: 700; color: var(--accent); font-family: var(--font-mono);">₹3,499</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           PARTNER BRANDS
+           ============================================================ -->
+    <section id="brands" class="brands-strip" aria-labelledby="brands-title">
+      <header class="brands-strip__header" data-reveal style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="small-caps" style="color: var(--accent); font-weight: 700;">Authorized Global Partners</span>
+        <h2 id="brands-title" style="font-size: 1.5rem; font-weight: 800; margin-top: 0.35rem; color: var(--ink);">World Champions. Master Engineers.</h2>
+      </header>
+
+      <ul class="brands-list" role="list" data-reveal>
+        <li class="brands-list__item">
+          <a href="./pages/brands.html" style="text-decoration: none; color: inherit;">
+            <svg viewBox="0 0 160 36" width="160" height="36" aria-label="Trek">
+              <text x="80" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-style="italic"
+                font-weight="900" font-size="24" fill="currentColor">TREK</text>
+            </svg>
+          </a>
+        </li>
+        <li class="brands-list__item">
+          <a href="./pages/brands.html" style="text-decoration: none; color: inherit;">
+            <svg viewBox="0 0 180 36" width="180" height="36" aria-label="Specialized">
+              <text x="90" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800"
+                letter-spacing="2" font-size="18" fill="currentColor">SPECIALIZED</text>
+            </svg>
+          </a>
+        </li>
+        <li class="brands-list__item">
+          <a href="./pages/brands.html" style="text-decoration: none; color: inherit;">
+            <svg viewBox="0 0 180 36" width="180" height="36" aria-label="Cannondale">
+              <text x="90" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700"
+                font-size="20" fill="currentColor">cannondale</text>
+            </svg>
+          </a>
+        </li>
+        <li class="brands-list__item">
+          <a href="./pages/brands.html" style="text-decoration: none; color: inherit;">
+            <svg viewBox="0 0 160 36" width="160" height="36" aria-label="Giant">
+              <text x="80" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900"
+                letter-spacing="3" font-size="24" fill="currentColor">GIANT</text>
+            </svg>
+          </a>
+        </li>
+        <li class="brands-list__item">
+          <a href="./pages/brands.html" style="text-decoration: none; color: inherit;">
+            <svg viewBox="0 0 160 36" width="160" height="36" aria-label="Shimano">
+              <text x="80" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900"
+                letter-spacing="3" font-size="20" fill="currentColor">SHIMANO</text>
+            </svg>
+          </a>
+        </li>
+        <li class="brands-list__item">
+          <a href="./pages/brands.html" style="text-decoration: none; color: inherit;">
+            <svg viewBox="0 0 160 36" width="160" height="36" aria-label="SRAM">
+              <text x="80" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="24"
+                letter-spacing="3" fill="currentColor">SRAM</text>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="./pages/brands.html" class="btn btn--ghost" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">
+          View All Brand Warranties & Stories →
+        </a>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           CYCLING COMMUNITY & RIDE CLUB BANNER
+           ============================================================ -->
+    <section class="section" style="background: linear-gradient(135deg, #0D1B2A 0%, #172a44 100%); color: #ffffff;">
+      <div class="wrap" data-reveal>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+          <div>
+            <span class="small-caps" style="color: #7ea443; font-weight: 700; letter-spacing: 0.1em;">Velox Peloton Club</span>
+            <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-top: 0.5rem; line-height: 1.15; color: #ffffff;">
+              Saturday Sunrise Peloton.<br />Sunday Morning Trail Shred.
+            </h2>
+            <p style="margin-top: 1rem; color: #bac8d9; line-height: 1.6; font-size: 1.05rem;">
+              Never ride alone. Join over 1,400 active club cyclists every weekend departing from our Chennai flagship store. Free mechanical support vehicle, rolling coffee stops, and paced groups for all speeds (22 to 34+ km/h).
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="./pages/contact.html" class="btn btn--primary" style="background: #7ea443; color: #0D1B2A; font-weight: 700;">
+                Join The Ride Club (Free) →
+              </a>
+              <a href="./pages/about.html" class="btn btn--ghost" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">
+                About Velox Cycles
+              </a>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+            <div style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(8px);">
+              <span style="font-size: 2.2rem; font-weight: 800; color: #7ea443; font-family: var(--font-mono); display: block;">1,400+</span>
+              <span style="font-size: 0.85rem; color: #bac8d9; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Active Club Riders</span>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(8px);">
+              <span style="font-size: 2.2rem; font-weight: 800; color: #7ea443; font-family: var(--font-mono); display: block;">100 km</span>
+              <span style="font-size: 0.85rem; color: #bac8d9; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Weekly Group Routes</span>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(8px);">
+              <span style="font-size: 2.2rem; font-weight: 800; color: #7ea443; font-family: var(--font-mono); display: block;">24h</span>
+              <span style="font-size: 0.85rem; color: #bac8d9; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Tune-Up Guarantee</span>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(8px);">
+              <span style="font-size: 2.2rem; font-weight: 800; color: #7ea443; font-family: var(--font-mono); display: block;">100%</span>
+              <span style="font-size: 0.85rem; color: #bac8d9; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Authentic Warranty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           PROMO STRIP / NEWSLETTER
+           ============================================================ -->
+    <section class="promo-strip" aria-label="Newsletter signup">
+      <div class="promo-strip__inner" data-reveal>
+        <div class="promo-strip__copy">
+          <span class="small-caps promo-strip__eyebrow">Join the Velox Peloton</span>
+          <h2 class="promo-strip__title">Get ₹1,000 off your first cycling accessory.</h2>
+          <p class="promo-strip__lede">
+            New bicycle fleet arrivals, gran fondo invitations, and maintenance workshop tips — delivered straight to your inbox. No spam, unsubscribe anytime.
+          </p>
+        </div>
+        <form class="promo-strip__form" data-form novalidate>
+          <label class="visually-hidden" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" type="email" name="email" placeholder="rider@veloxcycles.com" required
+            class="promo-strip__input" />
+          <button type="submit" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent);">
+            Subscribe
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="promo-strip__done" data-form-success hidden>
+            Thanks! Welcome to the peloton. Check your inbox for your ₹1,000 promo voucher.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           TESTIMONIALS
+           ============================================================ -->
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <header class="testimonials__header" data-reveal>
+        <span class="small-caps" style="color: var(--accent); font-weight: 700;">Rider Stories</span>
+        <h2 id="testimonials-title" class="testimonials__title">Words from riders who live in the saddle.</h2>
+      </header>
+
+      <ul class="testimonials__grid" role="list" data-reveal>
+        <li class="testimonial">
+          <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__quote">
+            "Bought the Velox Aero SLR 9 for the 200km East Coast Road Brevet. The laser bike fit was dialed to millimeter perfection — zero lower back pain, and shaved 18 minutes off my PR."
+          </p>
+          <footer class="testimonial__author">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Siddharth R." class="testimonial__avatar" loading="lazy" />
+            <div class="testimonial__author-info">
+              <span class="testimonial__name">Siddharth R.</span>
+              <span class="testimonial__meta">Chennai · Super Randonneur (BRM 200/300)</span>
+            </div>
+          </footer>
+        </li>
+        <li class="testimonial">
+          <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__quote">
+            "Booked the Pro Overhaul online for my Specialized Stumpjumper after a grueling monsoon trail season. Dropped off at 9am, picked up next morning looking brand new. Flawless hydraulic bleed."
+          </p>
+          <footer class="testimonial__author">
+            <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=150&auto=format&fit=crop&q=80" alt="Aditya K." class="testimonial__avatar" loading="lazy" />
+            <div class="testimonial__author-info">
+              <span class="testimonial__name">Aditya K.</span>
+              <span class="testimonial__meta">Bengaluru · Enduro & Downhill Trail Rider</span>
+            </div>
+          </footer>
+        </li>
+        <li class="testimonial">
+          <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__quote">
+            "The Velox Metro Urban 3 changed my daily commute completely. Pothole-ready 38c tires, hydraulic disc brakes that bite instantly in heavy rain, and rack mounts for my office bag."
+          </p>
+          <footer class="testimonial__author">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80" alt="Meera N." class="testimonial__avatar" loading="lazy" />
+            <div class="testimonial__author-info">
+              <span class="testimonial__name">Meera N.</span>
+              <span class="testimonial__meta">Chennai · Daily 24km Urban Commuter</span>
+            </div>
+          </footer>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+         CATALOG DATA — read by script.js
+         =================================================================== -->
+  <script type="application/json" id="catalog-data">
+[
+  {
+    "id": "velox-aero-slr9",
+    "name": "Velox Aero SLR 9",
+    "brand": "Velox",
+    "category": "road",
+    "price": 185000,
+    "oldPrice": 210000,
+    "badge": "sale",
+    "discount": 12,
+    "colors": ["#0D1B2A", "#556B2F", "#ffffff"],
+    "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "trek-emonda-sl6",
+    "name": "Trek Émonda SL 6 Disc",
+    "brand": "Trek",
+    "category": "road",
+    "price": 245000,
+    "oldPrice": 265000,
+    "badge": "sale",
+    "discount": 8,
+    "colors": ["#dc2626", "#0D1B2A", "#64748b"],
+    "image": "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "cannondale-supersix",
+    "name": "Cannondale SuperSix EVO 3",
+    "brand": "Cannondale",
+    "category": "road",
+    "price": 299000,
+    "oldPrice": null,
+    "badge": "new",
+    "discount": null,
+    "colors": ["#556B2F", "#1e293b", "#ffffff"],
+    "image": "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "velox-apex-trail",
+    "name": "Velox Apex Trail 29 FS",
+    "brand": "Velox",
+    "category": "mountain",
+    "price": 165000,
+    "oldPrice": 185000,
+    "badge": "sale",
+    "discount": 11,
+    "colors": ["#556B2F", "#0D1B2A", "#f59e0b"],
+    "image": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "specialized-stumpjumper",
+    "name": "Specialized Stumpjumper Pro",
+    "brand": "Specialized",
+    "category": "mountain",
+    "price": 385000,
+    "oldPrice": null,
+    "badge": "new",
+    "discount": null,
+    "colors": ["#0D1B2A", "#e2e8f0", "#556B2F"],
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "giant-stance-29",
+    "name": "Giant Stance 29 1",
+    "brand": "Giant",
+    "category": "mountain",
+    "price": 119000,
+    "oldPrice": 135000,
+    "badge": "sale",
+    "discount": 12,
+    "colors": ["#334155", "#556B2F", "#0D1B2A"],
+    "image": "https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "velox-metro-urban",
+    "name": "Velox Metro Urban 3 Disc",
+    "brand": "Velox",
+    "category": "hybrid",
+    "price": 46999,
+    "oldPrice": 52999,
+    "badge": "sale",
+    "discount": 11,
+    "colors": ["#0D1B2A", "#556B2F", "#94a3b8"],
+    "image": "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "trek-fx3-disc",
+    "name": "Trek FX 3 Disc",
+    "brand": "Trek",
+    "category": "hybrid",
+    "price": 68000,
+    "oldPrice": null,
+    "badge": "new",
+    "discount": null,
+    "colors": ["#1e293b", "#556B2F", "#dc2626"],
+    "image": "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "velox-evolt-adventure",
+    "name": "Velox E-Volt Adventure",
+    "brand": "Velox",
+    "category": "electric",
+    "price": 189000,
+    "oldPrice": 215000,
+    "badge": "sale",
+    "discount": 12,
+    "colors": ["#0D1B2A", "#556B2F", "#e2e8f0"],
+    "image": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "specialized-turbo-vado",
+    "name": "Specialized Turbo Vado 4.0",
+    "brand": "Specialized",
+    "category": "electric",
+    "price": 275000,
+    "oldPrice": null,
+    "badge": "new",
+    "discount": null,
+    "colors": ["#0D1B2A", "#556B2F", "#ffffff"],
+    "image": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "velox-mini-ripper",
+    "name": "Velox Mini Ripper 20\"",
+    "brand": "Velox",
+    "category": "kids",
+    "price": 18999,
+    "oldPrice": 22000,
+    "badge": "sale",
+    "discount": 14,
+    "colors": ["#556B2F", "#0D1B2A", "#f59e0b"],
+    "image": "https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "giro-aether-helmet",
+    "name": "Giro Aether Spherical MIPS",
+    "brand": "Giro",
+    "category": "accessories",
+    "price": 18500,
+    "oldPrice": 22000,
+    "badge": "sale",
+    "discount": 16,
+    "colors": ["#0D1B2A", "#556B2F", "#ffffff"],
+    "image": "https://images.unsplash.com/photo-1557683316-973673baf926?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "bontrager-ion-light",
+    "name": "Bontrager Ion Pro RT 1300 lm",
+    "brand": "Bontrager",
+    "category": "accessories",
+    "price": 9999,
+    "oldPrice": 11999,
+    "badge": "sale",
+    "discount": 17,
+    "colors": ["#0D1B2A"],
+    "image": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "kryptonite-ny-lock",
+    "name": "Kryptonite New York D-Lock",
+    "brand": "Kryptonite",
+    "category": "accessories",
+    "price": 9499,
+    "oldPrice": 10999,
+    "badge": "sale",
+    "discount": 14,
+    "colors": ["#f59e0b", "#0D1B2A"],
+    "image": "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=600&auto=format&fit=crop"
+  },
+  {
+    "id": "velox-pro-jersey",
+    "name": "Velox Pro Aero Cycling Jersey",
+    "brand": "Velox",
+    "category": "accessories",
+    "price": 3499,
+    "oldPrice": 4299,
+    "badge": "sale",
+    "discount": 19,
+    "colors": ["#0D1B2A", "#556B2F", "#ffffff"],
+    "image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&auto=format&fit=crop"
+  }
+]
+  </script>
+
+  <script src="./js/data.js" defer></script>
+  <script src="./js/navbar.js" defer></script>
+  <script src="./js/main.js" defer></script>
+  <script src="./js/form-validation.js" defer></script>
+  <script src="./js/script.js" defer></script>
+</body>
+
+</html>

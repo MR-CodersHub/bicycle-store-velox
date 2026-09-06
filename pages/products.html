@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Velox Cycles bicycle and accessories catalogue — road bikes, mountain bikes, hybrids, electric e-bikes, helmets, lights, and apparel."
+    />
+    <title>All Bicycles &amp; Accessories — Velox Cycles Showroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+   
+    <link rel="icon" href="../assets/logo.png" />
+    <script>
+      try {
+        var t = localStorage.getItem('stride-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        var d = localStorage.getItem('stride-dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <!-- navbar.js injects the shared utility bar, header and footer here -->
+
+    <main id="top">
+      <!-- ===========================================================
+           HERO
+           =========================================================== -->
+      <section class="page-hero page-hero--bg page-hero--center" aria-labelledby="products-title">
+        <div class="page-hero__bg-media">
+          <img
+            src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1600&auto=format&fit=crop"
+            alt="Velox Cycles fleet showroom"
+            class="page-hero__bg-img"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="page-hero__bg-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="page-hero__inner">
+          <span class="page-hero__eyebrow">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            The fleet · <span data-products-count>0</span> models &amp; gear
+          </span>
+          <h1 id="products-title" class="page-hero__title">Bikes &amp; Rider Gear.</h1>
+          <p class="page-hero__lede">
+            Road racing, trail enduro, urban commuting, smart e-bikes, and MIPS protection accessories. Every bicycle is assembled and laser-fitted by master technicians.
+          </p>
+          <div class="page-hero__ctas">
+            <a href="./bikes.html" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff;">
+              Bikes by Category (Road, MTB, E-Bike) →
+            </a>
+            <a href="./accessories.html" class="btn btn--ghost">
+              Accessories (Helmets, Lights, Locks) →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================================================
+           CATALOGUE — grid + filters rendered by js/products.js
+           =========================================================== -->
+      <section id="catalogue" class="section section--soft" aria-labelledby="products-list-title">
+        <div class="wrap">
+          <header class="sec-head" data-reveal>
+            <span class="sec-eyebrow" style="color: var(--accent); font-weight: 700;">Showroom Catalogue</span>
+            <h2 id="products-list-title" class="sec-title">Every Bicycle &amp; Gear Item</h2>
+          </header>
+
+          <div class="chip-bar" data-reveal>
+            <div class="chip-bar__inner" data-products-chips>
+              <!-- Category chips rendered by js/products.js -->
+            </div>
+          </div>
+
+          <div class="shop-search" data-reveal>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input
+              type="search"
+              data-products-search
+              placeholder="Search by model, brand, components or category…"
+              aria-label="Search products"
+            />
+          </div>
+
+          <div class="grid-auto product-list" data-products-grid>
+            <!-- Product cards rendered by js/products.js -->
+          </div>
+
+          <p class="blog-empty" data-products-empty hidden>
+            No models match that filter. <a href="products.html">Clear it</a> and try again.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===========================================================
+           WORKSHOP & RIDER GUARANTEE
+           =========================================================== -->
+      <section class="section" aria-labelledby="products-fit-title">
+        <div class="wrap">
+          <header class="sec-head" data-reveal>
+            <span class="sec-eyebrow" style="color: var(--accent); font-weight: 700;">The Velox Commitment</span>
+            <h2 id="products-fit-title" class="sec-title">Dialed for Performance. Guaranteed for Life.</h2>
+          </header>
+
+          <div class="grid-auto">
+            <div class="feature-card" data-reveal>
+              <span class="feature-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 17l3 3M9 12l7 7M3 11l4-4 6 6-4 4L3 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="17.5" cy="6.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <h3 class="feature-card__title">Dynamic 3D Laser Fit</h3>
+              <p class="feature-card__text">We dial in saddle height, fore-aft, stem reach, and pedal cleat angles before you roll out.</p>
+            </div>
+            <div class="feature-card" data-reveal>
+              <span class="feature-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h3 class="feature-card__title">Free 30-Day Tune-Up</h3>
+              <p class="feature-card__text">Ride for a month. Bring your bike in for free spoke re-tensioning, cable barrel adjustments, and safety check.</p>
+            </div>
+            <div class="feature-card" data-reveal>
+              <span class="feature-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h3 class="feature-card__title">Shimano Certified SSC</h3>
+              <p class="feature-card__text">Official Shimano &amp; SRAM service center with ultrasonic drivetrain cleaning and genuine parts inventory.</p>
+            </div>
+            <div class="feature-card" data-reveal>
+              <span class="feature-card__icon">
+                <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <h3 class="feature-card__title">24-Hour Turnaround</h3>
+              <p class="feature-card__text">Workshop appointments scheduled online enjoy guaranteed same-day or 24-hour turnaround times.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/data.js" defer></script>
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/products.js" defer></script>
+  </body>
+</html>

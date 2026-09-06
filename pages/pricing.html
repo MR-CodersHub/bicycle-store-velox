@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bicycle workshop repair packages, tune-up pricing, and maintenance tiers at Velox Cycles."
+    />
+    <title>Workshop &amp; Service Pricing — Velox Cycles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    
+    <link rel="icon" href="../assets/logo.png" />
+    <script>
+      try {
+        var t = localStorage.getItem('stride-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        var d = localStorage.getItem('stride-dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <!-- navbar.js injects the shared utility bar, header and footer here -->
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="page-hero page-hero--bg page-hero--center" aria-labelledby="pricing-title">
+        <div class="page-hero__bg-media">
+          <img
+            src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=1600&auto=format&fit=crop"
+            alt="Velox Cycles workshop technician adjusting bicycle components"
+            class="page-hero__bg-img"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="page-hero__bg-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="page-hero__inner">
+          <span class="page-hero__eyebrow">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            Velox Service Center
+          </span>
+          <h1 id="pricing-title" class="page-hero__title">Transparent Workshop Pricing.</h1>
+          <p class="page-hero__lede">
+            Fixed labor rates, genuine components, and no surprise charges. Certified Shimano &amp; SRAM technicians ready to tune your ride.
+          </p>
+          <div class="page-hero__ctas">
+            <a href="./booking.html" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff;">
+              Book an Appointment Online →
+            </a>
+            <a href="./services.html" class="btn btn--ghost">
+              Explore Full Repair Menu →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKAGES CARDS -->
+      <section class="section section--soft">
+        <div class="wrap">
+          <header class="sec-head" data-reveal>
+            <span class="sec-eyebrow" style="color: var(--accent); font-weight: 700;">Service Tiers</span>
+            <h2 class="sec-title">Standard Maintenance Packages</h2>
+          </header>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; margin-top: 2rem;">
+            
+            <div style="background: var(--surface); border-radius: var(--radius-xl); border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);" data-reveal>
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--ink-soft);">Quick Turnaround</span>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--ink); margin-top: 0.35rem; margin-bottom: 0.5rem;">Safety Tune-Up</h3>
+                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1rem;">₹1,499</div>
+                <p style="font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 1.25rem;">
+                  Essential safety check, brake alignment, gear indexing &amp; precision lubing.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.88rem; color: var(--ink); display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+                  <li>✓ Brake &amp; gear adjustment</li>
+                  <li>✓ Drivetrain chain lube</li>
+                  <li>✓ 25-point safety torque check</li>
+                  <li>✓ 45 mins express turnaround</li>
+                </ul>
+              </div>
+              <div style="margin-top: 1.75rem;">
+                <a href="./booking.html?pkg=safety" class="btn btn--ghost btn--block" style="font-weight: 700;">Book Safety Tune →</a>
+              </div>
+            </div>
+
+            <div style="background: var(--surface); border-radius: var(--radius-xl); border: 2px solid var(--accent); padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-md); position: relative;" data-reveal>
+              <span style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 800; padding: 4px 14px; border-radius: 999px; text-transform: uppercase;">Most Popular</span>
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--accent);">Comprehensive</span>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--ink); margin-top: 0.35rem; margin-bottom: 0.5rem;">Performance Tune-Up</h3>
+                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1rem;">₹2,999</div>
+                <p style="font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 1.25rem;">
+                  Ultrasonic drivetrain degreasing bath, digital wheel truing, and bearing adjustment.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.88rem; color: var(--ink); display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+                  <li>✓ Ultrasonic drivetrain bath</li>
+                  <li>✓ Wheel truing &amp; spoke tensioning</li>
+                  <li>✓ Headset &amp; bottom bracket adjustment</li>
+                  <li>✓ Same-day pickup</li>
+                </ul>
+              </div>
+              <div style="margin-top: 1.75rem;">
+                <a href="./booking.html?pkg=comprehensive" class="btn btn--primary btn--block" style="background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700;">Book Performance Tune →</a>
+              </div>
+            </div>
+
+            <div style="background: var(--surface); border-radius: var(--radius-xl); border: 1px solid var(--border); padding: 2.25rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);" data-reveal>
+              <div>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--ink-soft);">Ground-Up Rebuild</span>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--ink); margin-top: 0.35rem; margin-bottom: 0.5rem;">Velox Pro Race Overhaul</h3>
+                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1rem;">₹5,499</div>
+                <p style="font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 1.25rem;">
+                  Full disassembly to bare frame, fresh cables, hydraulic fluid bleed, and hub overhauls.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.88rem; color: var(--ink); display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+                  <li>✓ Stripped down to bare frame</li>
+                  <li>✓ Hydraulic brake fluid bleed</li>
+                  <li>✓ Repacked marine grease bearings</li>
+                  <li>✓ 24-hour turnaround</li>
+                </ul>
+              </div>
+              <div style="margin-top: 1.75rem;">
+                <a href="./booking.html?pkg=pro" class="btn btn--ghost btn--block" style="font-weight: 700;">Book Pro Overhaul →</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; margin-top: 3.5rem;" data-reveal>
+            <a href="./services.html" class="btn btn--primary" style="background: var(--inverse-bg); margin-right: 0.75rem; padding: 0.85rem 2rem;">
+              View All À La Carte Repair Rates →
+            </a>
+            <a href="./booking.html" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff; padding: 0.85rem 2rem;">
+              Schedule Appointment →
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/data.js" defer></script>
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

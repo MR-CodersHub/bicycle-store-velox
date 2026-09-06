@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Book a bicycle repair, tune-up, or diagnostic appointment at Velox Cycles. Certified Shimano & SRAM technicians with 24-hour turnaround and transparent pricing." />
+  <title>Book Service Appointment — Velox Cycles Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../assets/logo.png" />
+  <script>
+    try {
+      var t = localStorage.getItem('stride-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('stride-dir');
+      if (d) document.documentElement.setAttribute('dir', d);
+    } catch (e) { }
+  </script>
+</head>
+
+<body>
+  <!-- navbar.js injects the shared utility bar, header and footer here -->
+
+  <main id="top">
+    <!-- ===============================================================
+           HERO
+           ============================================================ -->
+    <section class="page-hero page-hero--bg">
+      <div class="page-hero__bg-media">
+        <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=1600&auto=format&fit=crop"
+          alt="Bicycle workshop tools and mechanic tuning drivetrain" class="page-hero__bg-img" loading="eager" />
+        <div class="page-hero__bg-overlay"></div>
+      </div>
+      <div class="wrap page-hero__inner" data-reveal>
+        <span class="hero__eyebrow page-hero__eyebrow">
+          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+          Certified Shimano &amp; SRAM Service Center
+        </span>
+        <h1 class="page-hero__title">Book Your Workshop Appointment.</h1>
+        <p class="page-hero__lede">
+          From quick derailleur indexing to complete ground-up race overhauls. Select your package, pick your time slot, and leave your machine with certified master mechanics.
+        </p>
+        <div class="page-hero__ctas">
+          <a href="#booking-section" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff;">
+            Start Booking Form ↓
+          </a>
+          <a href="./services.html" class="btn btn--ghost">
+            View Package Details &amp; Pricing →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           BOOKING FORM & SIDEBAR SECTION
+           ============================================================ -->
+    <section id="booking-section" class="section section--soft">
+      <div class="wrap">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;" class="booking-layout">
+          
+          <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem;" class="booking-grid">
+            <!-- Left Side: Interactive Booking Form -->
+            <div style="background: var(--surface); padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md);" data-reveal>
+              <form id="service-booking-form" novalidate>
+                
+                <!-- STEP 1: SERVICE PACKAGE -->
+                <div style="margin-bottom: 2.5rem;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <span style="background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">1</span>
+                    <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin: 0;">Select Service Package</h2>
+                  </div>
+                  
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;" id="package-selector">
+                    <label class="package-option" style="display: block; border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all 180ms ease; background: var(--bg);">
+                      <input type="radio" name="package" value="Safety Tune-Up" data-price="1499" data-duration="45 mins (Express)" checked style="margin-right: 0.5rem;" />
+                      <strong style="color: var(--ink); display: block; margin-top: 0.35rem; font-size: 1.05rem;">Safety Tune-Up</strong>
+                      <span style="display: block; color: var(--accent); font-weight: 700; font-family: var(--font-mono); margin: 0.35rem 0;">₹1,499</span>
+                      <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0; line-height: 1.4;">Brake alignment, gear indexing, chain lube &amp; 25-point safety torque check.</p>
+                    </label>
+
+                    <label class="package-option is-selected" style="display: block; border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all 180ms ease; background: var(--accent-soft);">
+                      <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <input type="radio" name="package" value="Comprehensive Performance Tune" data-price="2999" data-duration="2 to 3 hours" checked style="margin-right: 0.5rem;" />
+                        <span style="background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; text-transform: uppercase;">Most Popular</span>
+                      </div>
+                      <strong style="color: var(--ink); display: block; margin-top: 0.35rem; font-size: 1.05rem;">Comprehensive Performance</strong>
+                      <span style="display: block; color: var(--accent); font-weight: 700; font-family: var(--font-mono); margin: 0.35rem 0;">₹2,999</span>
+                      <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0; line-height: 1.4;">Full ultrasonic drivetrain bath, wheel truing, bearing adjustment &amp; rotor polish.</p>
+                    </label>
+
+                    <label class="package-option" style="display: block; border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all 180ms ease; background: var(--bg);">
+                      <input type="radio" name="package" value="Velox Pro Race Overhaul" data-price="5499" data-duration="24 hours" style="margin-right: 0.5rem;" />
+                      <strong style="color: var(--ink); display: block; margin-top: 0.35rem; font-size: 1.05rem;">Velox Pro Race Overhaul</strong>
+                      <span style="display: block; color: var(--accent); font-weight: 700; font-family: var(--font-mono); margin: 0.35rem 0;">₹5,499</span>
+                      <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0; line-height: 1.4;">Bare-frame strip down, fresh cables, hydraulic bleed &amp; master calibration.</p>
+                    </label>
+
+                    <label class="package-option" style="display: block; border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all 180ms ease; background: var(--bg);">
+                      <input type="radio" name="package" value="E-Bike Diagnostic & Motor Service" data-price="3499" data-duration="Same-day" style="margin-right: 0.5rem;" />
+                      <strong style="color: var(--ink); display: block; margin-top: 0.35rem; font-size: 1.05rem;">E-Bike Diagnostic &amp; Motor</strong>
+                      <span style="display: block; color: var(--accent); font-weight: 700; font-family: var(--font-mono); margin: 0.35rem 0;">₹3,499</span>
+                      <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0; line-height: 1.4;">Bosch &amp; Shimano official software update, battery health test &amp; motor check.</p>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- STEP 2: BIKE SPECIFICATIONS -->
+                <div style="margin-bottom: 2.5rem;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <span style="background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">2</span>
+                    <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin: 0;">Your Bicycle Details</h2>
+                  </div>
+
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
+                    <div class="field">
+                      <label for="bike-type" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Bicycle Category *</label>
+                      <select id="bike-type" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);">
+                        <option value="">Select bike category</option>
+                        <option value="Road Bike">Road Bike</option>
+                        <option value="Mountain Bike (MTB)">Mountain Bike (Hardtail / Full Suspension)</option>
+                        <option value="Hybrid / City Commuter">Hybrid / City Commuter</option>
+                        <option value="Electric E-Bike">Electric E-Bike (Bosch / Shimano / Bafang)</option>
+                        <option value="Kids Bicycle">Kids Bicycle (16" - 24")</option>
+                        <option value="Gravel / Cyclocross">Gravel / Cyclocross</option>
+                      </select>
+                    </div>
+
+                    <div class="field">
+                      <label for="bike-brand" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Brand *</label>
+                      <input id="bike-brand" type="text" placeholder="e.g. Trek, Specialized, Giant, Velox" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);" />
+                    </div>
+
+                    <div class="field">
+                      <label for="bike-model" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Model &amp; Approximate Year</label>
+                      <input id="bike-model" type="text" placeholder="e.g. Émonda SL 6 (2024)" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- STEP 3: DATE & TIME SLOT -->
+                <div style="margin-bottom: 2.5rem;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <span style="background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">3</span>
+                    <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin: 0;">Appointment Schedule &amp; Mode</h2>
+                  </div>
+
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+                    <div class="field">
+                      <label for="service-mode" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Service Preference *</label>
+                      <select id="service-mode" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);">
+                        <option value="Drop-Off (Same Day Pickup)">Standard Drop-Off (Same-Day / Next-Day)</option>
+                        <option value="Express While-You-Wait">Express While-You-Wait (Enjoy store lounge & coffee)</option>
+                        <option value="Doorstep Pickup & Delivery (+₹499)">Doorstep Pickup &amp; Return (+₹499)</option>
+                      </select>
+                    </div>
+
+                    <div class="field">
+                      <label for="booking-date" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Preferred Date *</label>
+                      <input id="booking-date" type="date" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--ink);">Select Arrival Time Slot *</label>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem;" id="timeslot-group">
+                      <button type="button" class="slot-btn is-active" data-slot="08:30 AM" style="padding: 0.75rem 0.5rem; border: 2px solid var(--accent); background: var(--accent-soft); color: var(--ink); border-radius: var(--radius-md); font-weight: 600; cursor: pointer; text-align: center;">
+                        08:30 AM <span style="display: block; font-size: 0.75rem; color: var(--ink-soft); font-weight: 400;">Early Bird</span>
+                      </button>
+                      <button type="button" class="slot-btn" data-slot="11:00 AM" style="padding: 0.75rem 0.5rem; border: 1px solid var(--border); background: var(--bg); color: var(--ink); border-radius: var(--radius-md); font-weight: 600; cursor: pointer; text-align: center;">
+                        11:00 AM <span style="display: block; font-size: 0.75rem; color: var(--ink-soft); font-weight: 400;">Morning</span>
+                      </button>
+                      <button type="button" class="slot-btn" data-slot="02:30 PM" style="padding: 0.75rem 0.5rem; border: 1px solid var(--border); background: var(--bg); color: var(--ink); border-radius: var(--radius-md); font-weight: 600; cursor: pointer; text-align: center;">
+                        02:30 PM <span style="display: block; font-size: 0.75rem; color: var(--ink-soft); font-weight: 400;">Afternoon</span>
+                      </button>
+                      <button type="button" class="slot-btn" data-slot="05:30 PM" style="padding: 0.75rem 0.5rem; border: 1px solid var(--border); background: var(--bg); color: var(--ink); border-radius: var(--radius-md); font-weight: 600; cursor: pointer; text-align: center;">
+                        05:30 PM <span style="display: block; font-size: 0.75rem; color: var(--ink-soft); font-weight: 400;">Evening</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- STEP 4: RIDER INFO & NOTES -->
+                <div style="margin-bottom: 2.5rem;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <span style="background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">4</span>
+                    <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin: 0;">Rider Details &amp; Mechanic Notes</h2>
+                  </div>
+
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+                    <div class="field">
+                      <label for="rider-name" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Full Name *</label>
+                      <input id="rider-name" type="text" placeholder="e.g. Vikram Chandrasekhar" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);" />
+                    </div>
+
+                    <div class="field">
+                      <label for="rider-phone" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Mobile Number (for WhatsApp job card) *</label>
+                      <input id="rider-phone" type="tel" placeholder="+91 98401 23456" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);" />
+                    </div>
+
+                    <div class="field">
+                      <label for="rider-email" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Email Address *</label>
+                      <input id="rider-email" type="email" placeholder="vikram@example.com" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);" />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="mechanic-notes" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--ink);">Specific Symptoms or Repair Requests</label>
+                    <textarea id="mechanic-notes" rows="3" placeholder="e.g. Rear derailleur skips when pedaling uphill, front brake squeaks loudly, check tubeless sealant level…" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); color: var(--ink);"></textarea>
+                  </div>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <div style="display: flex; gap: 1rem; align-items: center; justify-content: flex-end; flex-wrap: wrap;">
+                  <span style="font-size: 0.85rem; color: var(--ink-soft);">No advance payment required online. Pay after test-ride.</span>
+                  <button type="submit" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); padding: 0.85rem 2.5rem; font-size: 1rem; font-weight: 700; color: #fff; box-shadow: 0 4px 15px rgba(85, 107, 47, 0.35);">
+                    Confirm Service Appointment →
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right Side: Booking Summary & Workshop Guarantee Card -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;" data-reveal>
+              <!-- Live Summary Box -->
+              <div style="background: var(--surface); padding: 2rem; border-radius: var(--radius-xl); border: 2px solid var(--accent); box-shadow: var(--shadow-md);">
+                <span class="small-caps" style="color: var(--accent); font-weight: 800;">Appointment Summary</span>
+                <h3 id="summary-pkg-name" style="margin-top: 0.5rem; font-size: 1.35rem; color: var(--ink);">Comprehensive Performance</h3>
+                
+                <div style="margin: 1.25rem 0; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--ink-soft);">Base Package Rate:</span>
+                    <strong id="summary-pkg-price" style="font-family: var(--font-mono); color: var(--accent); font-size: 1.2rem;">₹2,999</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--ink-soft);">Est. Turnaround:</span>
+                    <strong id="summary-pkg-duration" style="color: var(--ink);">2 to 3 hours</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--ink-soft);">Selected Time Slot:</span>
+                    <strong id="summary-slot" style="color: var(--ink);">08:30 AM (Early Bird)</strong>
+                  </div>
+                </div>
+
+                <div style="background: var(--accent-soft); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
+                  <strong style="color: var(--accent-deep); font-size: 0.9rem; display: block; margin-bottom: 0.25rem;">✓ Included With Every Service:</strong>
+                  <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.8rem; color: var(--ink-soft); line-height: 1.5;">
+                    <li>Ultrasonic chain cleaning &amp; precision lubing</li>
+                    <li>Digital tire pressure calibration</li>
+                    <li>Full 25-point safety torque inspection</li>
+                    <li>30-day post-service free adjustment guarantee</li>
+                  </ul>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <svg viewBox="0 0 24 24" width="24" height="24" style="color: var(--accent); flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span style="font-size: 0.8rem; color: var(--ink-soft);">Authorized Shimano Service Center Guarantee</span>
+                </div>
+              </div>
+
+              <!-- Store Location & Workshop Guide Card -->
+              <div style="background: var(--surface); padding: 2rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem;">Velox Cycles Workshop Location</h4>
+                <p style="font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 1rem;">
+                  14 Khader Nawaz Khan Road,<br />
+                  Nungambakkam, Chennai 600 006<br />
+                  <em>(Opposite Taj Coromandel — Dedicated bike drop-off ramp in front)</em>
+                </p>
+                <div style="font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1rem; border-top: 1px solid var(--border); padding-top: 0.75rem;">
+                  <div><strong>Workshop Hours:</strong> Mon – Sat: 8:00 AM – 8:30 PM</div>
+                  <div><strong>Sunday Ride Club:</strong> 7:00 AM – 2:00 PM</div>
+                  <div><strong>Technician Hotline:</strong> <a href="tel:+914412345678" style="color: var(--accent); font-weight: 600;">+91 44 1234 5678</a></div>
+                </div>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--block" style="font-size: 0.85rem; padding: 0.5rem;">
+                  Open in Google Maps ↗
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           INTERACTIVE BOOKING CONFIRMATION MODAL
+           ============================================================ -->
+    <div id="booking-confirmation-modal" class="modal" hidden style="position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1.5rem;">
+      <div class="modal__overlay" style="position: absolute; inset: 0; background: rgba(13, 27, 42, 0.75); backdrop-filter: blur(5px); cursor: pointer;"></div>
+      <div class="modal__panel" style="position: relative; background: var(--surface); width: min(34rem, 100%); padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-lg); z-index: 2; text-align: center;">
+        
+        <div style="width: 64px; height: 64px; background: var(--accent-soft); color: var(--accent); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+          <svg viewBox="0 0 24 24" width="36" height="36"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--ink); margin-bottom: 0.5rem;">Service Slot Confirmed!</h2>
+        <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 1.5rem;">
+          Your bicycle workshop appointment has been registered on our live master schedule.
+        </p>
+
+        <div style="background: var(--bg-soft); padding: 1.25rem; border-radius: var(--radius-lg); text-align: left; margin-bottom: 1.5rem; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem; border: 1px solid var(--border);">
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--ink-soft);">Booking Reference:</span>
+            <strong id="modal-ref" style="font-family: var(--font-mono); color: var(--accent);">VLX-BK-8492</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--ink-soft);">Rider Name:</span>
+            <strong id="modal-rider" style="color: var(--ink);">-</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--ink-soft);">Bicycle:</span>
+            <strong id="modal-bike" style="color: var(--ink);">-</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--ink-soft);">Package:</span>
+            <strong id="modal-package" style="color: var(--ink);">-</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--ink-soft);">Scheduled Date &amp; Slot:</span>
+            <strong id="modal-datetime" style="color: var(--accent);">-</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--ink-soft);">Workshop Bay:</span>
+            <span style="color: var(--ink);">Bay 3 · Master Technician Karthik</span>
+          </div>
+        </div>
+
+        <p style="font-size: 0.8rem; color: var(--ink-soft); margin-bottom: 1.5rem;">
+          An automated WhatsApp confirmation &amp; digital job card has been queued for your phone number.
+        </p>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: center;">
+          <button type="button" id="modal-close-btn" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff; padding: 0.75rem 2rem;">
+            Done &amp; Return
+          </button>
+          <a href="../index.html" class="btn btn--ghost" style="padding: 0.75rem 1.5rem;">
+            Go to Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/data.js" defer></script>
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Set default appointment date to tomorrow
+      var dateInput = document.getElementById('booking-date');
+      if (dateInput) {
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.value = tomorrow.toISOString().split('T')[0];
+        dateInput.min = new Date().toISOString().split('T')[0];
+      }
+
+      // Handle package selector visual states
+      var packageLabels = document.querySelectorAll('.package-option');
+      var summaryPkgName = document.getElementById('summary-pkg-name');
+      var summaryPkgPrice = document.getElementById('summary-pkg-price');
+      var summaryPkgDuration = document.getElementById('summary-pkg-duration');
+
+      packageLabels.forEach(function (label) {
+        label.addEventListener('click', function () {
+          packageLabels.forEach(function (l) {
+            l.classList.remove('is-selected');
+            l.style.borderColor = 'var(--border)';
+            l.style.background = 'var(--bg)';
+          });
+          label.classList.add('is-selected');
+          label.style.borderColor = 'var(--accent)';
+          label.style.background = 'var(--accent-soft)';
+
+          var radio = label.querySelector('input[type="radio"]');
+          if (radio) {
+            radio.checked = true;
+            if (summaryPkgName) summaryPkgName.textContent = radio.value;
+            if (summaryPkgPrice) summaryPkgPrice.textContent = '₹' + Number(radio.getAttribute('data-price')).toLocaleString('en-IN');
+            if (summaryPkgDuration) summaryPkgDuration.textContent = radio.getAttribute('data-duration');
+          }
+        });
+      });
+
+      // Handle time slots
+      var slotButtons = document.querySelectorAll('.slot-btn');
+      var summarySlot = document.getElementById('summary-slot');
+      var selectedSlotText = '08:30 AM (Early Bird)';
+
+      slotButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          slotButtons.forEach(function (b) {
+            b.classList.remove('is-active');
+            b.style.borderColor = 'var(--border)';
+            b.style.background = 'var(--bg)';
+          });
+          btn.classList.add('is-active');
+          btn.style.borderColor = 'var(--accent)';
+          btn.style.background = 'var(--accent-soft)';
+
+          var text = btn.innerText.replace('\n', ' - ');
+          selectedSlotText = text;
+          if (summarySlot) summarySlot.textContent = text;
+        });
+      });
+
+      // Pre-select package from URL parameter (e.g. ?pkg=pro)
+      var params = new URLSearchParams(window.location.search);
+      var pkgParam = params.get('pkg');
+      if (pkgParam) {
+        var targetRadio = null;
+        if (pkgParam === 'safety') targetRadio = document.querySelector('input[value="Safety Tune-Up"]');
+        else if (pkgParam === 'pro') targetRadio = document.querySelector('input[value="Velox Pro Race Overhaul"]');
+        else if (pkgParam === 'ebike') targetRadio = document.querySelector('input[value="E-Bike Diagnostic & Motor Service"]');
+        if (targetRadio) {
+          targetRadio.closest('.package-option').click();
+        }
+      }
+
+      // Handle booking form submission
+      var form = document.getElementById('service-booking-form');
+      var modal = document.getElementById('booking-confirmation-modal');
+      var modalClose = document.getElementById('modal-close-btn');
+
+      if (form && modal) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var riderName = document.getElementById('rider-name').value.trim();
+          var riderPhone = document.getElementById('rider-phone').value.trim();
+          var riderEmail = document.getElementById('rider-email').value.trim();
+          var bikeType = document.getElementById('bike-type').value;
+          var bikeBrand = document.getElementById('bike-brand').value.trim();
+          var bikeModel = document.getElementById('bike-model').value.trim();
+          var dateVal = document.getElementById('booking-date').value;
+
+          if (!riderName || !riderPhone || !riderEmail || !bikeType || !bikeBrand || !dateVal) {
+            alert('Please fill out all required fields marked with *');
+            return;
+          }
+
+          var selectedPkg = document.querySelector('input[name="package"]:checked');
+          var pkgName = selectedPkg ? selectedPkg.value : 'Comprehensive Performance';
+
+          // Generate reference number
+          var refCode = 'VLX-BK-' + Math.floor(1000 + Math.random() * 9000);
+
+          document.getElementById('modal-ref').textContent = refCode;
+          document.getElementById('modal-rider').textContent = riderName;
+          document.getElementById('modal-bike').textContent = bikeBrand + (bikeModel ? ' ' + bikeModel : '') + ' (' + bikeType + ')';
+          document.getElementById('modal-package').textContent = pkgName;
+          document.getElementById('modal-datetime').textContent = dateVal + ' at ' + selectedSlotText;
+
+          modal.hidden = false;
+          modal.style.display = 'flex';
+        });
+
+        function closeModal() {
+          modal.hidden = true;
+          modal.style.display = 'none';
+          form.reset();
+        }
+
+        if (modalClose) {
+          modalClose.addEventListener('click', closeModal);
+        }
+
+        var modalOverlay = modal.querySelector('.modal__overlay');
+        if (modalOverlay) {
+          modalOverlay.addEventListener('click', closeModal);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

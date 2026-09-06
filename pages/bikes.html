@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Browse Velox Cycles' premium bicycle fleet. Road bikes, mountain bikes, hybrid commuters, e-bikes and kids bikes from Trek, Specialized, Cannondale, Giant." />
+  <title>Bicycles Showroom — Road, Mountain, Hybrid, E-Bikes | Velox Cycles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../assets/logo.png" />
+  <script>
+    try {
+      var t = localStorage.getItem('stride-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('stride-dir');
+      if (d) document.documentElement.setAttribute('dir', d);
+    } catch (e) { }
+  </script>
+</head>
+
+<body>
+  <!-- navbar.js injects the shared utility bar, header and footer here -->
+
+  <main id="top">
+    <!-- ===============================================================
+           HERO
+           ============================================================ -->
+    <section class="page-hero page-hero--bg">
+      <div class="page-hero__bg-media">
+        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1600&auto=format&fit=crop"
+          alt="Cyclist riding on high-speed road bike" class="page-hero__bg-img" loading="eager" />
+        <div class="page-hero__bg-overlay"></div>
+      </div>
+      <div class="wrap page-hero__inner" data-reveal>
+        <span class="hero__eyebrow page-hero__eyebrow">
+          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+          Velox Showroom · 2026 Fleet
+        </span>
+        <h1 class="page-hero__title">Precision Bikes for Every Terrain.</h1>
+        <p class="page-hero__lede">
+          Ultra-aerodynamic road racers, full-suspension enduro MTBs, agile urban fitness hybrids, and high-torque electric bikes. Tested, tuned, and guaranteed.
+        </p>
+        <div class="page-hero__ctas">
+          <a href="#bikes-catalogue" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff;">
+            Explore The Fleet ↓
+          </a>
+          <a href="./booking.html" class="btn btn--ghost">
+            Book a Test Ride or Fit →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           BIKE SHOWROOM CATALOGUE
+           ============================================================ -->
+    <section id="bikes-catalogue" class="section section--soft">
+      <div class="wrap">
+        <header class="sec-head" data-reveal>
+          <span class="sec-eyebrow" style="color: var(--accent); font-weight: 700;">Filter by Category</span>
+          <h2 class="sec-title">Organized by Riding Style</h2>
+        </header>
+
+        <!-- Category Chips -->
+        <div class="chip-bar" data-reveal>
+          <div class="chip-bar__inner" id="bikes-chips">
+            <button class="chip is-active" data-bike-cat="all" type="button">All Bikes <span class="chip__count" id="count-all">0</span></button>
+            <button class="chip" data-bike-cat="road" type="button">Road Bikes <span class="chip__count" id="count-road">0</span></button>
+            <button class="chip" data-bike-cat="mountain" type="button">Mountain (MTB) <span class="chip__count" id="count-mountain">0</span></button>
+            <button class="chip" data-bike-cat="hybrid" type="button">Hybrid &amp; Commuter <span class="chip__count" id="count-hybrid">0</span></button>
+            <button class="chip" data-bike-cat="electric" type="button">Electric E-Bikes <span class="chip__count" id="count-electric">0</span></button>
+            <button class="chip" data-bike-cat="kids" type="button">Kids Bikes <span class="chip__count" id="count-kids">0</span></button>
+            <button class="chip chip--accent" data-bike-cat="sale" type="button">Special Offers <span class="chip__count" id="count-sale">0</span></button>
+          </div>
+        </div>
+
+        <!-- Search Bar & Sorter -->
+        <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem;" data-reveal>
+          <div class="shop-search" style="margin: 0; flex: 1; max-width: 24rem;">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input
+              type="search"
+              id="bike-search-input"
+              placeholder="Search bikes by brand, gear, model…"
+              aria-label="Search bikes"
+            />
+          </div>
+
+          <label class="catalog__sort" style="margin: 0;">
+            <span class="small-caps">Sort By</span>
+            <select id="bike-sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid-auto product-list" id="bikes-grid" aria-live="polite">
+          <!-- Dynamically populated from STRIDE_DATA.PRODUCTS -->
+        </div>
+
+        <p class="blog-empty" id="bikes-empty" hidden>
+          No bicycles match that search or category filter. <button type="button" id="bikes-clear-filter" class="btn btn--ghost" style="margin-left: 0.5rem; padding: 0.35rem 0.75rem;">Reset Filter</button>
+        </p>
+
+        <!-- Accessories Jump Banner -->
+        <div style="margin-top: 4rem; background: var(--surface); padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;" data-reveal>
+          <div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin-bottom: 0.35rem;">Need Helmets, Lights, Locks or Apparel?</h3>
+            <p style="color: var(--ink-soft); font-size: 0.95rem; margin: 0;">Complete your kit with Giro MIPS helmets, high-power Bontrager lights, and Kryptonite locks.</p>
+          </div>
+          <a href="./accessories.html" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff; padding: 0.85rem 2rem;">
+            Shop Accessories Showroom →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/data.js" defer></script>
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var DATA = window.STRIDE_DATA;
+      if (!DATA) return;
+
+      // Filter only bicycles (exclude pure accessories)
+      var bikesOnly = DATA.PRODUCTS.filter(function (p) {
+        return p.category !== 'accessories';
+      });
+
+      var state = {
+        cat: 'all',
+        query: '',
+        sort: 'featured'
+      };
+
+      // Read URL parameter
+      var params = new URLSearchParams(window.location.search);
+      var initialCat = params.get('cat') || 'all';
+      state.cat = initialCat.toLowerCase();
+
+      var grid = document.getElementById('bikes-grid');
+      var searchInput = document.getElementById('bike-search-input');
+      var sortSelect = document.getElementById('bike-sort-select');
+      var emptyMsg = document.getElementById('bikes-empty');
+      var chipButtons = document.querySelectorAll('#bikes-chips [data-bike-cat]');
+
+      function formatRupees(n) {
+        return '₹' + Number(n).toLocaleString('en-IN');
+      }
+
+      function updateCounts() {
+        var countAll = bikesOnly.length;
+        var countRoad = bikesOnly.filter(function (p) { return p.category === 'road'; }).length;
+        var countMTB = bikesOnly.filter(function (p) { return p.category === 'mountain'; }).length;
+        var countHybrid = bikesOnly.filter(function (p) { return p.category === 'hybrid'; }).length;
+        var countElectric = bikesOnly.filter(function (p) { return p.category === 'electric'; }).length;
+        var countKids = bikesOnly.filter(function (p) { return p.category === 'kids'; }).length;
+        var countSale = bikesOnly.filter(function (p) { return p.badge === 'sale'; }).length;
+
+        if (document.getElementById('count-all')) document.getElementById('count-all').textContent = countAll;
+        if (document.getElementById('count-road')) document.getElementById('count-road').textContent = countRoad;
+        if (document.getElementById('count-mountain')) document.getElementById('count-mountain').textContent = countMTB;
+        if (document.getElementById('count-hybrid')) document.getElementById('count-hybrid').textContent = countHybrid;
+        if (document.getElementById('count-electric')) document.getElementById('count-electric').textContent = countElectric;
+        if (document.getElementById('count-kids')) document.getElementById('count-kids').textContent = countKids;
+        if (document.getElementById('count-sale')) document.getElementById('count-sale').textContent = countSale;
+      }
+
+      function matches(p) {
+        if (state.cat !== 'all') {
+          if (state.cat === 'sale') {
+            if (p.badge !== 'sale' && !p.compareAt) return false;
+          } else if (p.category !== state.cat) {
+            return false;
+          }
+        }
+        if (state.query) {
+          var q = state.query.toLowerCase();
+          var combined = (p.name + ' ' + p.brand + ' ' + p.category + ' ' + (p.tagline || '')).toLowerCase();
+          if (combined.indexOf(q) === -1) return false;
+        }
+        return true;
+      }
+
+      function renderBikes() {
+        var list = bikesOnly.filter(matches);
+
+        // Sort
+        if (state.sort === 'price-asc') {
+          list.sort(function (a, b) { return a.price - b.price; });
+        } else if (state.sort === 'price-desc') {
+          list.sort(function (a, b) { return b.price - a.price; });
+        } else if (state.sort === 'rating') {
+          list.sort(function (a, b) { return b.rating - a.rating; });
+        }
+
+        if (!list.length) {
+          grid.innerHTML = '';
+          emptyMsg.hidden = false;
+          return;
+        }
+
+        emptyMsg.hidden = true;
+        grid.innerHTML = list.map(function (p) {
+          var badgeHtml = p.badge
+            ? '<span class="product-card__badge product-card__badge--' + p.badge + '">' + (p.badge === 'sale' ? 'Sale' : 'New') + '</span>'
+            : '';
+
+          var oldPriceHtml = p.compareAt
+            ? '<span class="product-card__price-old">' + formatRupees(p.compareAt) + '</span>'
+            : '';
+
+          var swatches = (p.colors || []).slice(0, 3).map(function (c) {
+            return '<span class="product-card__swatch" style="background:' + c + '"></span>';
+          }).join('');
+
+          return (
+            '<article class="product-card" data-details="' + p.id + '">' +
+              '<div class="product-card__media">' +
+                badgeHtml +
+                '<img src="' + p.image + '" alt="' + p.name + '" class="product-card__img" loading="lazy" />' +
+                '<button class="product-card__quick-btn" type="button" data-quickview="' + p.id + '">Quick View</button>' +
+              '</div>' +
+              '<div class="product-card__body">' +
+                '<div class="product-card__top">' +
+                  '<span class="product-card__brand">' + p.brand + ' · ' + (p.type || p.category).toUpperCase() + '</span>' +
+                  '<div class="product-card__colors">' + swatches + '</div>' +
+                '</div>' +
+                '<h3 class="product-card__name">' +
+                  '<a href="javascript:void(0)" data-quickview="' + p.id + '">' + p.name + '</a>' +
+                '</h3>' +
+                '<p class="product-card__tagline">' + (p.tagline || '') + '</p>' +
+                '<div class="product-card__price-row">' +
+                  '<span class="product-card__price">' + formatRupees(p.price) + '</span>' +
+                  oldPriceHtml +
+                '</div>' +
+                '<div class="product-card__cta">' +
+                  '<button class="btn btn--primary btn--block" type="button" data-add="' + p.id + '" style="background: var(--inverse-bg);">' +
+                    'Add to Bag · ' + formatRupees(p.price) +
+                  '</button>' +
+                '</div>' +
+              '</div>' +
+            '</article>'
+          );
+        }).join('');
+
+        // Delegate quick view & add to cart
+        grid.querySelectorAll('[data-quickview]').forEach(function (el) {
+          el.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var id = el.getAttribute('data-quickview');
+            if (window.StrideQuickView) window.StrideQuickView.open(id);
+          });
+        });
+
+        grid.querySelectorAll('[data-add]').forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var id = btn.getAttribute('data-add');
+            if (window.StrideCart) {
+              window.StrideCart.add(id);
+              window.StrideCart.open();
+            }
+          });
+        });
+      }
+
+      // Chip click handlers
+      chipButtons.forEach(function (btn) {
+        var cat = btn.getAttribute('data-bike-cat');
+        if (cat === state.cat) {
+          chipButtons.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+        }
+
+        btn.addEventListener('click', function () {
+          chipButtons.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+          state.cat = cat;
+          renderBikes();
+        });
+      });
+
+      // Search input handler
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          state.query = searchInput.value.trim();
+          renderBikes();
+        });
+      }
+
+      // Sort select handler
+      if (sortSelect) {
+        sortSelect.addEventListener('change', function () {
+          state.sort = sortSelect.value;
+          renderBikes();
+        });
+      }
+
+      // Reset filter button
+      var resetBtn = document.getElementById('bikes-clear-filter');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          state.cat = 'all';
+          state.query = '';
+          if (searchInput) searchInput.value = '';
+          chipButtons.forEach(function (b) {
+            b.classList.toggle('is-active', b.getAttribute('data-bike-cat') === 'all');
+          });
+          renderBikes();
+        });
+      }
+
+      updateCounts();
+      renderBikes();
+    });
+  </script>
+</body>
+
+</html>

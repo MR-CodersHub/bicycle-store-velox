@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Shop cycling accessories, MIPS helmets, bike lights, locks, and apparel at Velox Cycles. Giro, POC, Bontrager, Knog, Kryptonite, Rapha." />
+  <title>Bicycle Accessories &amp; Cycling Gear — Velox Cycles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../assets/logo.png" />
+  <script>
+    try {
+      var t = localStorage.getItem('stride-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var d = localStorage.getItem('stride-dir');
+      if (d) document.documentElement.setAttribute('dir', d);
+    } catch (e) { }
+  </script>
+</head>
+
+<body>
+  <!-- navbar.js injects the shared utility bar, header and footer here -->
+
+  <main id="top">
+    <!-- ===============================================================
+           HERO
+           ============================================================ -->
+    <section class="page-hero page-hero--bg">
+      <div class="page-hero__bg-media">
+        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=1600&auto=format&fit=crop"
+          alt="Performance cycling helmet and gear showcase" class="page-hero__bg-img" loading="eager" />
+        <div class="page-hero__bg-overlay"></div>
+      </div>
+      <div class="wrap page-hero__inner" data-reveal>
+        <span class="hero__eyebrow page-hero__eyebrow">
+          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+          Accessories &amp; Rider Gear
+        </span>
+        <h1 class="page-hero__title">Safety, Visibility &amp; Speed.</h1>
+        <p class="page-hero__lede">
+          Five-star MIPS impact protection, 1300 lumen rechargeable night lights, Sold Secure Diamond anti-theft locks, and aerodynamic Italian mesh apparel.
+        </p>
+        <div class="page-hero__ctas">
+          <a href="#acc-catalogue" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff;">
+            Browse Accessories ↓
+          </a>
+          <a href="./bikes.html" class="btn btn--ghost">
+            View Complete Bikes Fleet →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+           ACCESSORIES CATALOGUE
+           ============================================================ -->
+    <section id="acc-catalogue" class="section section--soft">
+      <div class="wrap">
+        <header class="sec-head" data-reveal>
+          <span class="sec-eyebrow" style="color: var(--accent); font-weight: 700;">Curated Gear Collection</span>
+          <h2 class="sec-title">Helmets, Lights, Locks &amp; Apparel</h2>
+        </header>
+
+        <!-- Category Chips -->
+        <div class="chip-bar" data-reveal>
+          <div class="chip-bar__inner" id="acc-chips">
+            <button class="chip is-active" data-acc-cat="all" type="button">All Gear <span class="chip__count" id="count-acc-all">0</span></button>
+            <button class="chip" data-acc-cat="Helmets" type="button">Helmets <span class="chip__count" id="count-helmets">0</span></button>
+            <button class="chip" data-acc-cat="Lights" type="button">Lights &amp; Radar <span class="chip__count" id="count-lights">0</span></button>
+            <button class="chip" data-acc-cat="Locks" type="button">Security &amp; Locks <span class="chip__count" id="count-locks">0</span></button>
+            <button class="chip" data-acc-cat="Apparel" type="button">Jerseys, Bibs &amp; Shoes <span class="chip__count" id="count-apparel">0</span></button>
+            <button class="chip chip--accent" data-acc-cat="sale" type="button">Special Discounts <span class="chip__count" id="count-acc-sale">0</span></button>
+          </div>
+        </div>
+
+        <!-- Search Bar & Sorter -->
+        <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem;" data-reveal>
+          <div class="shop-search" style="margin: 0; flex: 1; max-width: 24rem;">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input
+              type="search"
+              id="acc-search-input"
+              placeholder="Search helmets, lumens, locks, jerseys…"
+              aria-label="Search accessories"
+            />
+          </div>
+
+          <label class="catalog__sort" style="margin: 0;">
+            <span class="small-caps">Sort By</span>
+            <select id="acc-sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid-auto product-list" id="acc-grid" aria-live="polite">
+          <!-- Dynamically populated from STRIDE_DATA.PRODUCTS (category === 'accessories') -->
+        </div>
+
+        <p class="blog-empty" id="acc-empty" hidden>
+          No cycling accessories match that filter. <button type="button" id="acc-clear-filter" class="btn btn--ghost" style="margin-left: 0.5rem; padding: 0.35rem 0.75rem;">Reset Filter</button>
+        </p>
+
+        <!-- Workshop Banner -->
+        <div style="margin-top: 4rem; background: var(--surface); padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;" data-reveal>
+          <div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin-bottom: 0.35rem;">Need Accessory Installation or Cleat Alignment?</h3>
+            <p style="color: var(--ink-soft); font-size: 0.95rem; margin: 0;">We provide free accessory installation and pedal cleat laser fitting at our workshop with any purchase.</p>
+          </div>
+          <a href="./booking.html" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff; padding: 0.85rem 2rem;">
+            Book a Workshop Slot →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/data.js" defer></script>
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var DATA = window.STRIDE_DATA;
+      if (!DATA) return;
+
+      // Filter only accessories
+      var accOnly = DATA.PRODUCTS.filter(function (p) {
+        return p.category === 'accessories';
+      });
+
+      var state = {
+        cat: 'all',
+        query: '',
+        sort: 'featured'
+      };
+
+      // Read URL parameter
+      var params = new URLSearchParams(window.location.search);
+      var initialCat = params.get('type') || params.get('cat') || 'all';
+      state.cat = initialCat;
+
+      var grid = document.getElementById('acc-grid');
+      var searchInput = document.getElementById('acc-search-input');
+      var sortSelect = document.getElementById('acc-sort-select');
+      var emptyMsg = document.getElementById('acc-empty');
+      var chipButtons = document.querySelectorAll('#acc-chips [data-acc-cat]');
+
+      function formatRupees(n) {
+        return '₹' + Number(n).toLocaleString('en-IN');
+      }
+
+      function updateCounts() {
+        var countAll = accOnly.length;
+        var countHelmets = accOnly.filter(function (p) { return p.type === 'Helmets'; }).length;
+        var countLights = accOnly.filter(function (p) { return p.type === 'Lights'; }).length;
+        var countLocks = accOnly.filter(function (p) { return p.type === 'Locks'; }).length;
+        var countApparel = accOnly.filter(function (p) { return p.type === 'Apparel'; }).length;
+        var countSale = accOnly.filter(function (p) { return p.badge === 'sale'; }).length;
+
+        if (document.getElementById('count-acc-all')) document.getElementById('count-acc-all').textContent = countAll;
+        if (document.getElementById('count-helmets')) document.getElementById('count-helmets').textContent = countHelmets;
+        if (document.getElementById('count-lights')) document.getElementById('count-lights').textContent = countLights;
+        if (document.getElementById('count-locks')) document.getElementById('count-locks').textContent = countLocks;
+        if (document.getElementById('count-apparel')) document.getElementById('count-apparel').textContent = countApparel;
+        if (document.getElementById('count-acc-sale')) document.getElementById('count-acc-sale').textContent = countSale;
+      }
+
+      function matches(p) {
+        if (state.cat !== 'all') {
+          if (state.cat === 'sale') {
+            if (p.badge !== 'sale' && !p.compareAt) return false;
+          } else if (p.type.toLowerCase() !== state.cat.toLowerCase()) {
+            return false;
+          }
+        }
+        if (state.query) {
+          var q = state.query.toLowerCase();
+          var combined = (p.name + ' ' + p.brand + ' ' + p.type + ' ' + (p.tagline || '')).toLowerCase();
+          if (combined.indexOf(q) === -1) return false;
+        }
+        return true;
+      }
+
+      function renderAccessories() {
+        var list = accOnly.filter(matches);
+
+        // Sort
+        if (state.sort === 'price-asc') {
+          list.sort(function (a, b) { return a.price - b.price; });
+        } else if (state.sort === 'price-desc') {
+          list.sort(function (a, b) { return b.price - a.price; });
+        } else if (state.sort === 'rating') {
+          list.sort(function (a, b) { return b.rating - a.rating; });
+        }
+
+        if (!list.length) {
+          grid.innerHTML = '';
+          emptyMsg.hidden = false;
+          return;
+        }
+
+        emptyMsg.hidden = true;
+        grid.innerHTML = list.map(function (p) {
+          var badgeHtml = p.badge
+            ? '<span class="product-card__badge product-card__badge--' + p.badge + '">' + (p.badge === 'sale' ? 'Sale' : 'New') + '</span>'
+            : '';
+
+          var oldPriceHtml = p.compareAt
+            ? '<span class="product-card__price-old">' + formatRupees(p.compareAt) + '</span>'
+            : '';
+
+          var swatches = (p.colors || []).slice(0, 3).map(function (c) {
+            return '<span class="product-card__swatch" style="background:' + c + '"></span>';
+          }).join('');
+
+          return (
+            '<article class="product-card" data-details="' + p.id + '">' +
+              '<div class="product-card__media">' +
+                badgeHtml +
+                '<img src="' + p.image + '" alt="' + p.name + '" class="product-card__img" loading="lazy" />' +
+                '<button class="product-card__quick-btn" type="button" data-quickview="' + p.id + '">Quick View</button>' +
+              '</div>' +
+              '<div class="product-card__body">' +
+                '<div class="product-card__top">' +
+                  '<span class="product-card__brand">' + p.brand + ' · ' + p.type.toUpperCase() + '</span>' +
+                  '<div class="product-card__colors">' + swatches + '</div>' +
+                '</div>' +
+                '<h3 class="product-card__name">' +
+                  '<a href="javascript:void(0)" data-quickview="' + p.id + '">' + p.name + '</a>' +
+                '</h3>' +
+                '<p class="product-card__tagline">' + (p.tagline || '') + '</p>' +
+                '<div class="product-card__price-row">' +
+                  '<span class="product-card__price">' + formatRupees(p.price) + '</span>' +
+                  oldPriceHtml +
+                '</div>' +
+                '<div class="product-card__cta">' +
+                  '<button class="btn btn--primary btn--block" type="button" data-add="' + p.id + '" style="background: var(--inverse-bg);">' +
+                    'Add to Bag · ' + formatRupees(p.price) +
+                  '</button>' +
+                '</div>' +
+              '</div>' +
+            '</article>'
+          );
+        }).join('');
+
+        // Delegate quick view & add to cart
+        grid.querySelectorAll('[data-quickview]').forEach(function (el) {
+          el.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var id = el.getAttribute('data-quickview');
+            if (window.StrideQuickView) window.StrideQuickView.open(id);
+          });
+        });
+
+        grid.querySelectorAll('[data-add]').forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var id = btn.getAttribute('data-add');
+            if (window.StrideCart) {
+              window.StrideCart.add(id);
+              window.StrideCart.open();
+            }
+          });
+        });
+      }
+
+      // Chip click handlers
+      chipButtons.forEach(function (btn) {
+        var cat = btn.getAttribute('data-acc-cat');
+        if (cat.toLowerCase() === state.cat.toLowerCase()) {
+          chipButtons.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+        }
+
+        btn.addEventListener('click', function () {
+          chipButtons.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+          state.cat = cat;
+          renderAccessories();
+        });
+      });
+
+      // Search input handler
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          state.query = searchInput.value.trim();
+          renderAccessories();
+        });
+      }
+
+      // Sort select handler
+      if (sortSelect) {
+        sortSelect.addEventListener('change', function () {
+          state.sort = sortSelect.value;
+          renderAccessories();
+        });
+      }
+
+      // Reset filter button
+      var resetBtn = document.getElementById('acc-clear-filter');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          state.cat = 'all';
+          state.query = '';
+          if (searchInput) searchInput.value = '';
+          chipButtons.forEach(function (b) {
+            b.classList.toggle('is-active', b.getAttribute('data-acc-cat') === 'all');
+          });
+          renderAccessories();
+        });
+      }
+
+      updateCounts();
+      renderAccessories();
+    });
+  </script>
+</body>
+
+</html>
