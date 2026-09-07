@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css?v=7" />
   <link rel="icon" href="./assets/logo.png" />
   <script>
     /* Minimal theme boot to avoid flash — full logic in js/main.js */
@@ -31,57 +31,54 @@
 
   <main id="top">
     <!-- ===============================================================
-           HERO (Full-Bleed Editorial — Velox Cycles)
+           HERO (Modern Showcase Layout)
            ============================================================ -->
-    <section class="hero hero--editorial" aria-labelledby="hero-title">
+    <section class="hero hero--skot" aria-labelledby="hero-title">
       <div class="hero__bg-media">
-        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1600&auto=format&fit=crop"
-          alt="Cyclist riding aero carbon road bike on open coastal tarmac" class="hero__bg-img" loading="eager" decoding="async" />
-        <div class="hero__bg-overlay" aria-hidden="true"></div>
+        <img src="./assets/hero-bg.png"
+          alt="Velox Electric Bike" class="hero__bg-img" loading="eager" decoding="async" />
       </div>
 
       <div class="hero__content-wrap">
-        <!-- Main Editorial Content (Left side) -->
-        <div class="hero__copy hero__copy--editorial" data-reveal>
-          <span class="hero__eyebrow-editorial">
-            <span class="hero__eyebrow-dot-white"></span>
-            VELOX CYCLES · 2026 FLEET
-          </span>
-
-          <h1 id="hero-title" class="hero__title hero__title--editorial">
-            Velox<span style="color: var(--accent);">.</span><br />
-            Ride Faster. Go Further.
-          </h1>
-
-          <p class="hero__lede-editorial">
-            Carbon road racers, trail-crushing MTBs, lightweight commuters, and smart e-bikes.<br />
-            Engineered for pure adrenaline and tuned by certified master mechanics.
-          </p>
-
-          <div class="hero__ctas hero__ctas--editorial" style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-            <a href="./pages/bikes.html" class="btn hero__btn-pill">
-              Explore Bikes & Accessories <span aria-hidden="true">→</span>
-            </a>
-            <a href="./pages/booking.html" class="btn hero__btn-pill" style="background: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; box-shadow: 0 8px 24px rgba(85, 107, 47, 0.45);">
-              Book Service Appointment <span aria-hidden="true">→</span>
-            </a>
+        <!-- Top Row: Headline (Left) & Customer Reviews Badge (Right) -->
+        <div class="hero__top-row" data-reveal>
+          <div class="hero__headline-col">
+            <h1 id="hero-title" class="hero__skot-title">
+              Super fast
+              <span class="hero__skot-sub">electric Moped</span>
+            </h1>
           </div>
         </div>
 
-        <!-- Bottom 3-Column Feature Row -->
-        <div class="hero__bottom-row" data-reveal>
-          <div class="hero__feature-col">
-            <h3 class="hero__feature-title">350+ BIKES IN STOCK</h3>
-            <p class="hero__feature-desc">Road, Mountain, Hybrid, Gravel, E-Bikes & Kids from top global brands.</p>
+        <!-- Bottom Row: C45 Classic Model Spec (Left) & DB50QT Preview Card (Right) -->
+        <div class="hero__bottom-row--skot" data-reveal>
+          <div class="hero__spec-col">
+            <h2 class="hero__spec-code">C45</h2>
+            <span class="hero__spec-label">Classic Model</span>
           </div>
-          <div class="hero__feature-col">
-            <h3 class="hero__feature-title">SHIMANO SERVICE CENTER</h3>
-            <p class="hero__feature-desc">Certified workshop with 24-hour turnaround tune-up guarantee.</p>
-          </div>
-          <div class="hero__feature-col">
-            <h3 class="hero__feature-title">PRECISION 3D BIKE FIT</h3>
-            <p class="hero__feature-desc">Laser saddle, cleat & reach alignment free with every bicycle purchase.</p>
-          </div>
+
+          <aside class="hero__preview-col">
+            <a href="./pages/bikes.html" class="hero__preview-card" aria-label="View DB50QT Panther Moped">
+              <div class="hero__preview-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                  <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                  <path d="M15 6h-3l-2 5h-4"></path>
+                  <path d="M12 11l4 6.5"></path>
+                  <path d="M9 17.5l2-6.5"></path>
+                </svg>
+              </div>
+              <div class="hero__preview-details">
+                <strong class="hero__preview-name">DB50QT</strong>
+                <span class="hero__preview-category">Panther Moped</span>
+              </div>
+              <span class="hero__preview-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </span>
+            </a>
+          </aside>
         </div>
       </div>
     </section>
