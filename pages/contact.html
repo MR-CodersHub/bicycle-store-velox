@@ -118,15 +118,15 @@
            =========================================================== -->
       <section class="section section--tight" style="padding-top: 0;">
         <div class="wrap" data-reveal>
-          <div style="background: linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%); border: 2px solid var(--accent); border-radius: var(--radius-xl); padding: clamp(1.5rem, 4vw, 2.5rem); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-shadow: var(--shadow-md);">
+          <div class="booking-cta-banner">
             <div>
               <span class="small-caps" style="color: var(--accent); font-weight: 800;">Need a Bike Repair or Tune-Up?</span>
-              <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--ink); margin: 0.25rem 0 0.5rem;">Use Our Dedicated Service Appointment Page</h2>
+              <h2 style="font-size: clamp(1.2rem, 3.5vw, 1.6rem); font-weight: 800; color: var(--ink); margin: 0.25rem 0 0.5rem;">Use Our Dedicated Service Appointment Page</h2>
               <p style="color: var(--ink-soft); font-size: 0.95rem; margin: 0; max-width: 42rem; line-height: 1.5;">
                 Select your service package, choose express while-you-wait or standard drop-off, pick your arrival time slot, and get an instant confirmation reference code.
               </p>
             </div>
-            <a href="./booking.html" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff; padding: 0.85rem 2.25rem; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 15px rgba(85, 107, 47, 0.4);">
+            <a href="./booking.html" class="btn btn--primary booking-cta-btn">
               Open Dedicated Booking Form →
             </a>
           </div>
@@ -146,11 +146,11 @@
             </p>
 
             <!-- Form Tabs -->
-            <div style="display: inline-flex; background: var(--border); padding: 4px; border-radius: var(--radius-full); margin-top: 1.5rem; gap: 4px;">
-              <button type="button" id="tab-btn-service" class="btn btn--sm" style="background: var(--accent); color: #fff; border-radius: var(--radius-full); font-weight: 700; border: none; padding: 0.6rem 1.4rem;">
+            <div class="contact-tabs" role="tablist" aria-label="Contact form options">
+              <button type="button" id="tab-btn-service" class="contact-tab-btn is-active" role="tab" aria-selected="true">
                 Service Appointment Form
               </button>
-              <button type="button" id="tab-btn-general" class="btn btn--sm" style="background: transparent; color: var(--ink-soft); border-radius: var(--radius-full); font-weight: 600; border: none; padding: 0.6rem 1.4rem;">
+              <button type="button" id="tab-btn-general" class="contact-tab-btn" role="tab" aria-selected="false">
                 General Inquiry
               </button>
             </div>
@@ -231,7 +231,7 @@
                 </div>
               </div>
 
-              <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 0.5rem;">
+              <div class="form-actions" style="margin-top: 0.5rem;">
                 <button type="submit" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff;">
                   Confirm Service Appointment
                   <span aria-hidden="true">→</span>
