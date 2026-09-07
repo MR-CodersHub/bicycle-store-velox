@@ -32,18 +32,18 @@
     <!-- ===============================================================
            HERO
            ============================================================ -->
-    <section class="page-hero page-hero--bg">
+    <section class="page-hero page-hero--bg page-hero--center" aria-labelledby="booking-hero-title">
       <div class="page-hero__bg-media">
         <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=1600&auto=format&fit=crop"
-          alt="Bicycle workshop tools and mechanic tuning drivetrain" class="page-hero__bg-img" loading="eager" />
-        <div class="page-hero__bg-overlay"></div>
+          alt="Bicycle workshop tools and mechanic tuning drivetrain" class="page-hero__bg-img" loading="eager" decoding="async" />
+        <div class="page-hero__bg-overlay" aria-hidden="true"></div>
       </div>
-      <div class="wrap page-hero__inner" data-reveal>
-        <span class="hero__eyebrow page-hero__eyebrow">
+      <div class="page-hero__inner" data-reveal>
+        <span class="page-hero__eyebrow">
           <span class="hero__eyebrow-dot" aria-hidden="true"></span>
           Certified Shimano &amp; SRAM Service Center
         </span>
-        <h1 class="page-hero__title">Book Your Workshop Appointment.</h1>
+        <h1 id="booking-hero-title" class="page-hero__title">Book Your Workshop Appointment.</h1>
         <p class="page-hero__lede">
           From quick derailleur indexing to complete ground-up race overhauls. Select your package, pick your time slot, and leave your machine with certified master mechanics.
         </p>
@@ -220,7 +220,7 @@
                 <div style="display: flex; gap: 1rem; align-items: center; justify-content: flex-end; flex-wrap: wrap;">
                   <span style="font-size: 0.85rem; color: var(--ink-soft);">No advance payment required online. Pay after test-ride.</span>
                   <button type="submit" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); padding: 0.85rem 2.5rem; font-size: 1rem; font-weight: 700; color: #fff; box-shadow: 0 4px 15px rgba(85, 107, 47, 0.35);">
-                    Confirm Service Appointment →
+                    Confirm  Ride →
                   </button>
                 </div>
               </form>

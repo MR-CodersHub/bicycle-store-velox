@@ -88,7 +88,7 @@ var STRIDE_DATA = (function () {
       brand: 'Cannondale',
       category: 'road',
       type: 'Road',
-      tagline: 'The ultimate pure road racing synthesis of speed and lightweight.',
+      tagline: 'The ultimate pure road racing synthesis of speed.',
       lede:
         'Low drag. High speed. The SuperSix EVO flies uphill and swoops downhill with telepathic handling, sleek aerodynamic lines, and a Shimano 105 Di2 wireless electronic groupset.',
       price: 299000,
@@ -133,7 +133,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 52,
       sizes: ['S (15")', 'M (17.5")', 'L (19")', 'XL (21")'],
       colors: ['#556B2F', '#0D1B2A', '#f59e0b'],
-      image: 'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=900&auto=format&fit=crop',
+      image: '/assets/home-bg.jpg',
       imageAlt: 'Velox Apex Trail full-suspension mountain bike on trail',
       stats: [
         { value: '140 mm', label: 'Fox 34 Performance Fork' },
@@ -159,7 +159,7 @@ var STRIDE_DATA = (function () {
       brand: 'Specialized',
       category: 'mountain',
       type: 'Mountain',
-      tagline: 'The undisputed benchmark of all-mountain trail performance.',
+      tagline: 'The benchmark of all-mountain trail performance.',
       lede:
         'Featherweight FACT 11m carbon chassis with SWAT door downtube storage, Fox Factory Kashima suspension, and SRAM X01 Eagle AXS wireless shifting for lightning fast trail dominance.',
       price: 385000,
@@ -169,7 +169,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 22,
       sizes: ['S2', 'S3', 'S4', 'S5'],
       colors: ['#0D1B2A', '#e2e8f0', '#556B2F'],
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&auto=format&fit=crop',
+      image: '/assets/p1.jpg',
       imageAlt: 'Specialized Stumpjumper Pro carbon mountain bike',
       stats: [
         { value: 'Kashima', label: 'Fox Factory Coating' },
@@ -193,7 +193,7 @@ var STRIDE_DATA = (function () {
       brand: 'Giant',
       category: 'mountain',
       type: 'Mountain',
-      tagline: 'Confidence-inspiring 29er trail bike with FlexPoint suspension.',
+      tagline: 'Inspiring 29er trail bike with FlexPoint suspension.',
       lede:
         'Engineered around lightweight ALUXX aluminum, the Stance 29 delivers smooth 130mm front and 120mm rear travel to soak up roots, drops, and rocky singletrack with plush poise.',
       price: 119000,
@@ -264,7 +264,7 @@ var STRIDE_DATA = (function () {
       brand: 'Trek',
       category: 'hybrid',
       type: 'Hybrid',
-      tagline: 'Fitness hybrid with carbon fork and vibration-damping IsoZone handlebars.',
+      tagline: 'Fitness hybrid with carbon fork IsoZone handlebars.',
       lede:
         'FX 3 Disc is a versatile fitness bike that provides an invigorating ride for exercise, daily work commutes, or leisurely weekend coffee spins.',
       price: 68000,
@@ -274,7 +274,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 45,
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['#1e293b', '#556B2F', '#dc2626'],
-      image: 'https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?w=900&auto=format&fit=crop',
+      image: '/assets/p2.jpg',
       imageAlt: 'Trek FX 3 Disc hybrid bicycle',
       stats: [
         { value: 'Carbon Fork', label: 'Vibration absorbing' },
@@ -291,39 +291,6 @@ var STRIDE_DATA = (function () {
       ],
       related: ['velox-metro-urban', 'cannondale-quick4', 'kryptonite-ny-lock']
     },
-    {
-      id: 'cannondale-quick4',
-      name: 'Cannondale Quick 4',
-      brand: 'Cannondale',
-      category: 'hybrid',
-      type: 'Hybrid',
-      tagline: 'Swift, sporty fitness bike with 360° reflective graphics.',
-      lede:
-        'A bike that is light, agile and comfortable with fast road tires, confident upright handling, and integrated wheel sensor that tracks speed, distance and calories burned via Cannondale app.',
-      price: 58500,
-      compareAt: 64900,
-      badge: 'sale',
-      rating: 4.7,
-      reviewCount: 39,
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['#556B2F', '#0D1B2A', '#38bdf8'],
-      image: 'https://images.unsplash.com/photo-1502744688674-c619d1586c9e?w=900&auto=format&fit=crop',
-      imageAlt: 'Cannondale Quick 4 hybrid bike',
-      stats: [
-        { value: 'Integrated', label: 'Wheel Sensor' },
-        { value: '360° Reflect', label: 'Nighttime Safety' },
-        { value: '4.7★', label: 'from 39 riders' }
-      ],
-      specs: [
-        { title: 'Frame', text: 'SmartForm C3 Alloy, SAVE micro-suspension, tapered head tube' },
-        { title: 'Drivetrain', text: 'MicroSHIFT Advent 9-speed, 11-42T' },
-        { title: 'Brakes', text: 'Tektro HD-R280 hydraulic disc, 160/140mm rotors' }
-      ],
-      faqs: [
-        { q: 'How does the phone mount work?', a: 'An integrated SP-Connect mount on the stem lets you click your smartphone on securely for GPS navigation.' }
-      ],
-      related: ['velox-metro-urban', 'trek-fx3-disc', 'bontrager-ion-light']
-    },
 
     /* ---------------- ELECTRIC BIKES ---------------- */
     {
@@ -332,7 +299,7 @@ var STRIDE_DATA = (function () {
       brand: 'Velox',
       category: 'electric',
       type: 'Electric',
-      tagline: 'Bosch-powered e-bike with 120km range and 85Nm torque.',
+      tagline: 'Bosch-powered e-bike with 120km range.',
       lede:
         'Flatten any hill and cruise past gridlock traffic. Equipped with a Bosch Performance Line CX motor, integrated 625Wh PowerTube battery, front suspension fork, and integrated Supernova LED headlights.',
       price: 189000,
@@ -361,39 +328,6 @@ var STRIDE_DATA = (function () {
         { q: 'Is it legal to ride without a license in India?', a: 'Yes! It meets all ARAI and CMVR exemptions (pedal-assist up to 25 km/h, 250W rated), so no registration, road tax, or license is required.' }
       ],
       related: ['specialized-turbo-vado', 'giant-roam-e', 'abus-bordo-lock']
-    },
-    {
-      id: 'specialized-turbo-vado',
-      name: 'Specialized Turbo Vado 4.0',
-      brand: 'Specialized',
-      category: 'electric',
-      type: 'Electric',
-      tagline: 'It’s you, only faster — the premier luxury electric commuter.',
-      lede:
-        'Smooth, whisper-quiet Specialized 2.0 motor multiplies your pedaling power by 4x. MasterMind display allows custom power tuning and over-the-air firmware updates via the Mission Control app.',
-      price: 275000,
-      compareAt: null,
-      badge: 'new',
-      rating: 5.0,
-      reviewCount: 19,
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['#0D1B2A', '#556B2F', '#ffffff'],
-      image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=900&auto=format&fit=crop',
-      imageAlt: 'Specialized Turbo Vado luxury electric commuter bicycle',
-      stats: [
-        { value: '710 Wh', label: 'Massive Battery Pack' },
-        { value: '4x Power', label: 'Pedal Multiplication' },
-        { value: '5.0★', label: 'from 19 reviews' }
-      ],
-      specs: [
-        { title: 'Motor', text: 'Specialized 2.0, 70Nm torque, custom tuned motor, 250W nominal' },
-        { title: 'Battery', text: 'Specialized U2-710, integrated battery with charge state display' },
-        { title: 'Radar', text: 'Garmin Varia Radar integration alerts you to cars approaching from behind' }
-      ],
-      faqs: [
-        { q: 'Does it have anti-theft security built in?', a: 'Yes! The Mission Control app lets you lock the motor and activate an audible alarm. The bike cannot be powered on without your phone or custom PIN.' }
-      ],
-      related: ['velox-evolt-adventure', 'giant-roam-e', 'kryptonite-ny-lock']
     },
     {
       id: 'giant-roam-e',
@@ -436,7 +370,7 @@ var STRIDE_DATA = (function () {
       brand: 'Velox',
       category: 'kids',
       type: 'Kids',
-      tagline: 'Lightweight alloy bike engineered specifically for young riders.',
+      tagline: 'Lightweight bike engineered for young riders.',
       lede:
         'Most kids bikes are heavy steel tanks. The Mini Ripper uses custom butted aluminum weighing only 8.2 kg, short-reach brake levers sized for small hands, and durable puncture-resistant tires.',
       price: 18999,
@@ -496,39 +430,6 @@ var STRIDE_DATA = (function () {
       ],
       related: ['velox-mini-ripper', 'specialized-riprock-20', 'lazer-blade-helmet']
     },
-    {
-      id: 'specialized-riprock-20',
-      name: 'Specialized Riprock 20',
-      brand: 'Specialized',
-      category: 'kids',
-      type: 'Kids',
-      tagline: 'Purpose-built trail rig for fearless junior shredders.',
-      lede:
-        'Hydraulic disc brakes, modern trail geometry, 2.35" Ground Control tires, and wide-range 9-speed gearing give your young rider the real mountain bike confidence to conquer singletrack.',
-      price: 36000,
-      compareAt: 39999,
-      badge: 'sale',
-      rating: 4.9,
-      reviewCount: 30,
-      sizes: ['20" Wheels (Age 6-10)'],
-      colors: ['#556B2F', '#0D1B2A', '#38bdf8'],
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&auto=format&fit=crop',
-      imageAlt: 'Specialized Riprock 20 junior mountain bike',
-      stats: [
-        { value: 'Hydraulic Disc', label: 'Stopping Power' },
-        { value: '9-Speed', label: 'MicroSHIFT Acolyte' },
-        { value: '4.9★', label: 'from 30 reviews' }
-      ],
-      specs: [
-        { title: 'Frame', text: 'A1 Premium Butted Alloy, 12x142mm thru-axle' },
-        { title: 'Brakes', text: 'Promax hydraulic disc, 160mm rotors' },
-        { title: 'Drivetrain', text: 'microSHIFT Acolyte, 9-speed, 11-42T' }
-      ],
-      faqs: [
-        { q: 'Does it have training wheels?', a: 'No, this is a dedicated performance bike for kids already confident on two wheels.' }
-      ],
-      related: ['velox-mini-ripper', 'trek-precaliber-24', 'poc-tectal-helmet']
-    },
 
     /* ---------------- ACCESSORIES: HELMETS ---------------- */
     {
@@ -547,7 +448,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 94,
       sizes: ['S (51-55cm)', 'M (55-59cm)', 'L (59-63cm)'],
       colors: ['#0D1B2A', '#556B2F', '#ffffff'],
-      image: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=900&auto=format&fit=crop',
+      image: '/assets/a-h5.jpg',
       imageAlt: 'Giro Aether Spherical cycling helmet',
       stats: [
         { value: '263 g', label: 'featherlight road helmet' },
@@ -581,7 +482,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 62,
       sizes: ['XS-S (51-54cm)', 'M-L (55-58cm)', 'XL-XXL (59-62cm)'],
       colors: ['#556B2F', '#0D1B2A', '#e2e8f0'],
-      image: 'https://images.unsplash.com/photo-1559348349-86f1f65817fe?w=900&auto=format&fit=crop',
+      image: '/assets/a-h6.jpg',
       imageAlt: 'POC Tectal Race MIPS mountain bike helmet in olive green',
       stats: [
         { value: 'Aramid Bridges', label: 'Crash Protection' },
@@ -616,7 +517,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 110,
       sizes: ['One Size (Universal 31.8 / 35mm Mount)'],
       colors: ['#0D1B2A'],
-      image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=900&auto=format&fit=crop',
+      image: '/assets/a-l3.jpg',
       imageAlt: 'Bontrager high powered bicycle front light',
       stats: [
         { value: '1300 lm', label: 'CREE LED Output' },
@@ -632,38 +533,6 @@ var STRIDE_DATA = (function () {
         { q: 'Can it be mounted under a GPS computer?', a: 'Yes! It is fully compatible with Blendr and GoPro-style dual under-mounts.' }
       ],
       related: ['knog-blinder-light', 'kryptonite-ny-lock', 'velox-metro-urban']
-    },
-    {
-      id: 'knog-blinder-light',
-      name: 'Knog Blinder USB Rear Strobe',
-      brand: 'Knog',
-      category: 'accessories',
-      type: 'Lights',
-      tagline: '100 lumen punchy COB LED rear safety light.',
-      lede:
-        '100% waterproof IP67 silicone rear flasher with integrated USB-A recharge arm (no cables needed). 8 custom animated flash patterns proven to alert distracted motorists.',
-      price: 3499,
-      compareAt: 3999,
-      badge: 'sale',
-      rating: 4.8,
-      reviewCount: 142,
-      sizes: ['One Size (fits 22-32mm seatposts & aero posts)'],
-      colors: ['#dc2626', '#0D1B2A'],
-      image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=900&auto=format&fit=crop',
-      imageAlt: 'Knog Blinder rear red bicycle light',
-      stats: [
-        { value: '100 lm', label: 'COB LED Grid' },
-        { value: '55 hrs', label: 'Eco Flash Runtime' },
-        { value: '4.8★', label: 'from 142 commuters' }
-      ],
-      specs: [
-        { title: 'Waterproof', text: 'IP67 rated — tested 100% submersible in water' },
-        { title: 'Attachment', text: 'Tool-less silicone strap with interchangeable bands for aero seatposts' }
-      ],
-      faqs: [
-        { q: 'Does it fit D-shaped aero seatposts?', a: 'Yes, the package includes 3 silicone bands accommodating round, teardrop, and D-shaped aero posts.' }
-      ],
-      related: ['bontrager-ion-light', 'kryptonite-ny-lock', 'giro-aether-helmet']
     },
 
     /* ---------------- ACCESSORIES: LOCKS ---------------- */
@@ -683,7 +552,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 83,
       sizes: ['Standard 8.3cm x 15.3cm'],
       colors: ['#f59e0b', '#0D1B2A'],
-      image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=900&auto=format&fit=crop',
+      image: '/assets/a-l4.jpg',
       imageAlt: 'Kryptonite heavy duty bicycle D lock',
       stats: [
         { value: '18 mm', label: 'Hardened Steel Shackle' },
@@ -717,7 +586,7 @@ var STRIDE_DATA = (function () {
       reviewCount: 47,
       sizes: ['85cm Length', '110cm Length'],
       colors: ['#0D1B2A', '#556B2F'],
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&auto=format&fit=crop',
+      image: '/assets/a-l1.jpg',
       imageAlt: 'Abus Bordo folding bicycle lock',
       stats: [
         { value: '5.5 mm', label: 'Hardened Steel Bars' },
@@ -735,103 +604,7 @@ var STRIDE_DATA = (function () {
     },
 
     /* ---------------- ACCESSORIES: APPAREL ---------------- */
-    {
-      id: 'velox-pro-jersey',
-      name: 'Velox Pro Aero Cycling Jersey',
-      brand: 'Velox',
-      category: 'accessories',
-      type: 'Apparel',
-      tagline: 'Race-fit aerodynamic jersey tailored for hot, humid training rides.',
-      lede:
-        'Ultra-breathable Italian micro-mesh front panel with 3D dimpled sleeves to minimize aerodynamic drag. Three reinforced rear cargo pockets plus a zippered waterproof phone sleeve.',
-      price: 3499,
-      compareAt: 4299,
-      badge: 'sale',
-      rating: 4.9,
-      reviewCount: 118,
-      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-      colors: ['#0D1B2A', '#556B2F', '#ffffff'],
-      image: 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=900&auto=format&fit=crop',
-      imageAlt: 'Velox Pro Aero cycling jersey in Midnight Blue and Olive Green',
-      stats: [
-        { value: '115 g', label: 'ultra-lightweight fabric' },
-        { value: 'UPF 50+', label: 'sun protection' },
-        { value: '4.9★', label: 'from 118 club cyclists' }
-      ],
-      specs: [
-        { title: 'Fabric', text: '86% Recycled Polyester, 14% Elastane rapid-wicking mesh' },
-        { title: 'Zipper', text: 'Full-length YKK semi-autolock zipper with chin guard' },
-        { title: 'Waistband', text: 'Laser-cut silicone gripper keeps jersey anchored when in drops' }
-      ],
-      faqs: [
-        { q: 'How does it fit?', a: 'It is a snug race fit designed to sit flat against the skin. If you prefer a relaxed club fit, we recommend ordering one size up.' }
-      ],
-      related: ['rapha-bib-shorts', 'giro-monaco-gloves', 'shimano-rc7-shoes']
-    },
-    {
-      id: 'rapha-bib-shorts',
-      name: 'Rapha Core Cycling Bib Shorts',
-      brand: 'Rapha',
-      category: 'accessories',
-      type: 'Apparel',
-      tagline: 'Renowned all-day comfort with dual-density chamois padding.',
-      lede:
-        'Dense-knit fabric provides gentle compressive support for quadriceps and hamstrings, while flatlock seams and wide leg grippers prevent chafing across 100km+ endurance miles.',
-      price: 8999,
-      compareAt: null,
-      badge: 'new',
-      rating: 5.0,
-      reviewCount: 76,
-      sizes: ['XS', 'S', 'M', 'L', 'XL'],
-      colors: ['#0D1B2A', '#111827'],
-      image: 'https://images.unsplash.com/photo-1502744688674-c619d1586c9e?w=900&auto=format&fit=crop',
-      imageAlt: 'Rapha Core performance cycling bib shorts',
-      stats: [
-        { value: 'Dual-Density', label: 'Perforated Chamois Pad' },
-        { value: 'Zero Chafing', label: 'Flatlock Seams' },
-        { value: '5.0★', label: 'from 76 endurance riders' }
-      ],
-      specs: [
-        { title: 'Chamois', text: 'Multi-layer memory foam chamois with antibacterial top sheet' },
-        { title: 'Straps', text: 'Laser-cut wide mesh bib straps with high stretch' }
-      ],
-      faqs: [
-        { q: 'Do you wear underwear under bib shorts?', a: 'No, bib shorts are designed to be worn directly against bare skin with chamois cream if needed.' }
-      ],
-      related: ['velox-pro-jersey', 'shimano-rc7-shoes', 'giro-monaco-gloves']
-    },
-    {
-      id: 'giro-monaco-gloves',
-      name: 'Giro Monaco II Gel Cycling Gloves',
-      brand: 'Giro',
-      category: 'accessories',
-      type: 'Apparel',
-      tagline: 'Supple Pittards leather palm with Technogel vibration relief.',
-      lede:
-        'Engineered for long road rides and gran fondos. 3mm Technogel distribution pads cushion the ulnar and median nerves to prevent hand numbness and road buzz.',
-      price: 2799,
-      compareAt: 3299,
-      badge: 'sale',
-      rating: 4.8,
-      reviewCount: 55,
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['#0D1B2A', '#556B2F', '#ffffff'],
-      image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=900&auto=format&fit=crop',
-      imageAlt: 'Giro Monaco II gel padded cycling gloves',
-      stats: [
-        { value: 'Technogel', label: '3mm Nerve Padding' },
-        { value: 'Pittards', label: 'Vented Leather Palm' },
-        { value: '4.8★', label: 'from 55 riders' }
-      ],
-      specs: [
-        { title: 'Palm', text: '3-panel Super Fit engineered vented Pittards goat leather' },
-        { title: 'Upper', text: 'Moisture-wicking 4-way stretch breathable mesh with micro-fleece wipe' }
-      ],
-      faqs: [
-        { q: 'Are they machine washable?', a: 'We recommend hand washing in cold water with mild soap and air drying to preserve the natural Pittards leather.' }
-      ],
-      related: ['velox-pro-jersey', 'rapha-bib-shorts', 'giro-aether-helmet']
-    },
+    
     {
       id: 'shimano-rc7-shoes',
       name: 'Shimano RC7 Carbon Road Shoes (RC702)',
@@ -848,13 +621,13 @@ var STRIDE_DATA = (function () {
       reviewCount: 68,
       sizes: ['EU 40', 'EU 41', 'EU 42', 'EU 43', 'EU 44', 'EU 45'],
       colors: ['#ffffff', '#0D1B2A', '#dc2626'],
-      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=900&auto=format&fit=crop',
       imageAlt: 'Shimano RC7 carbon road cycling shoes with dual BOA dials',
       stats: [
         { value: '10/12', label: 'Carbon Stiffness Index' },
         { value: 'Dual BOA', label: 'L6 Micro Dials' },
         { value: '4.9★', label: 'from 68 road cyclists' }
-      ],
+      ],  
       specs: [
         { title: 'Outsole', text: 'Ultra-rigid carbon fiber composite midsole and heel cup' },
         { title: 'Cleat Fit', text: 'Standard 3-bolt SPD-SL / Look Keo road cleat mounting' }
@@ -863,6 +636,72 @@ var STRIDE_DATA = (function () {
         { q: 'Do cleats come in the box?', a: 'Pedal cleats come with your pedals (Shimano SPD-SL or Look), but our store provides free precision cleat alignment with any shoe purchase.' }
       ],
       related: ['velox-aero-slr9', 'rapha-bib-shorts', 'velox-pro-jersey']
+    },
+    {
+      id: 'garmin-varia-radar',
+      name: 'Garmin Varia RTL515 Radar Tail Light',
+      brand: 'Garmin',
+      category: 'accessories',
+      type: 'Lights',
+      tagline: 'Rearview radar alerts you to approaching vehicles up to 140m away.',
+      lede:
+        'Pairs with your Garmin Edge, smartphone, or smartwatch to provide visual and audible alerts for vehicles approaching from behind up to 140 meters. Integrated tail light offers daylight visibility up to 1 mile.',
+      price: 19990,
+      compareAt: 22500,
+      badge: 'new',
+      rating: 5.0,
+      reviewCount: 84,
+      sizes: ['Universal Seatpost Mount (Includes D-shape & Aero Shims)'],
+      colors: ['#0D1B2A'],
+      image: '/assets/a-l2.jpg',
+      imageAlt: 'Garmin Varia RTL515 rearview radar and safety tail light',
+      stats: [
+        { value: '140 m', label: 'Vehicle Detection Range' },
+        { value: '16 hrs', label: 'Day Flash Battery Life' },
+        { value: '5.0★', label: 'from 84 riders' }
+      ],
+      specs: [
+        { title: 'Detection', text: 'Visual and audible alerts for vehicles approaching from behind up to 140 meters' },
+        { title: 'Visibility', text: 'Daylight visibility up to 1 mile with 220-degree light spread' },
+        { title: 'Connectivity', text: 'ANT+ and Bluetooth Low Energy (BLE) compatible with Edge & smartphones' }
+      ],
+      faqs: [
+        { q: 'Does it work with Wahoo or Hammerhead computers?', a: 'Yes! The Varia uses standard ANT+ radar protocol and pairs seamlessly with Wahoo, Hammerhead, and Stages bike computers.' }
+      ],
+      related: ['bontrager-ion-light', 'giro-aether-helmet', 'kryptonite-ny-lock']
+    },
+    {
+      id: 'oakley-sutro-glasses',
+      name: 'Oakley Sutro Prizm Road Sunglasses',
+      brand: 'Oakley',
+      category: 'accessories',
+      type: 'Apparel',
+      tagline: 'High-wrap cylindrical shield with contrast-enhancing Prizm Road optics.',
+      lede:
+        'Designed with performance in mind, Sutro gives cyclists a bold, versatile look that they can confidently wear on and off the bike. High-wrap shield protects eyes from wind and debris while Prizm lens technology fine-tunes colors for optimum road visibility.',
+      price: 13800,
+      compareAt: 15500,
+      badge: 'sale',
+      rating: 4.9,
+      reviewCount: 105,
+      sizes: ['Standard Fit (Universal Face Geometry)'],
+      colors: ['#0D1B2A', '#ffffff', '#dc2626'],
+      image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=900&auto=format&fit=crop',
+      imageAlt: 'Oakley Sutro Prizm Road performance cycling sunglasses',
+      stats: [
+        { value: 'Prizm Road', label: 'Optimum Contrast' },
+        { value: 'O Matter', label: 'Lightweight Frame' },
+        { value: '4.9★', label: 'from 105 road racers' }
+      ],
+      specs: [
+        { title: 'Lens', text: 'Prizm Road 20% VLT, Plutonite UV400 100% UVA/UVB protection' },
+        { title: 'Grip', text: 'Unobtainium nosepads increase grip with perspiration' },
+        { title: 'Frame', text: 'Lightweight O Matter durable, stress-resistant frame material' }
+      ],
+      faqs: [
+        { q: 'Does it come with a protective case?', a: 'Yes, includes a protective ballistic hard case, microbag cleaning pouch, and alternate nosepad.' }
+      ],
+      related: ['velox-pro-jersey', 'giro-aether-helmet', 'shimano-rc7-shoes']
     }
   ];
 
@@ -874,22 +713,30 @@ var STRIDE_DATA = (function () {
       id: 'how-to-choose-first-road-bike',
       slug: 'how-to-choose-first-road-bike',
       title: 'How to Choose Your First Performance Road Bike in 2026',
-      date: 'Aug 28, 2026',
+      date: '2026-08-28',
       readTime: '6 min read',
-      author: 'Karthik Raman',
-      authorRole: 'Head Mechanic & Master Bike Fitter',
-      category: 'Gear Guide',
+      author: {
+        name: 'Karthik Raman',
+        role: 'Head Mechanic & Master Bike Fitter',
+        image: '../assets/men1.jpg'
+      },
+      category: 'Gear Guides',
       excerpt:
         'Carbon vs. aluminum frames, mechanical vs. wireless Di2 electronic shifting, and why proper geometry matters more than sticker price.',
+      featured: true,
+      image: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=900&auto=format&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1200&auto=format&fit=crop',
+      imageAlt: 'Rider on carbon road bike accelerating on smooth tarmac',
       heroImageAlt: 'Rider on carbon road bike accelerating on smooth tarmac',
-      sections: [
+      tags: ['Road Bikes', 'Buying Guide', 'Shimano Di2', 'Carbon Frame'],
+      content: [
         {
           heading: 'Geometry First: Endurance vs. Race',
           body: [
             'Before looking at gear ratios or carbon weaves, understand stack and reach. An aggressive race geometry (like our Velox Aero SLR 9) places you lower for minimum aerodynamic drag. An endurance geometry (like Trek Domane) gives a slightly taller headtube that spares your lower back and neck over 100km rides.',
             'Always get your flexibility and femur-to-torso proportions assessed at our fitting studio before locking in your frame size.'
-          ]
+          ],
+          quote: 'A bike that fits 5% better delivers 20% more power and endurance on century rides.'
         },
         {
           heading: 'Electronic vs. Mechanical Groupsets',
@@ -903,21 +750,30 @@ var STRIDE_DATA = (function () {
       id: 'essential-bike-maintenance',
       slug: 'essential-bike-maintenance',
       title: 'The 5-Minute Post-Ride Routine That Doubles Drivetrain Life',
-      date: 'Aug 14, 2026',
+      date: '2026-08-14',
       readTime: '4 min read',
-      author: 'Arjun Swaminathan',
-      authorRole: 'Senior Workshop Technician',
+      author: {
+        name: 'Arjun Swaminathan',
+        role: 'Senior Workshop Technician',
+        image: '../assets/men2.jpg'
+      },
       category: 'Maintenance',
       excerpt:
         'Save thousands in worn chains and chewed cassettes with this simple 3-step degrease, wipe, and precision lubrication checklist.',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=900&auto=format&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=1200&auto=format&fit=crop',
+      imageAlt: 'Bicycle drivetrain with sparkling clean chain and cassette',
       heroImageAlt: 'Bicycle drivetrain with sparkling clean chain and cassette',
-      sections: [
+      tags: ['Maintenance', 'Chain Care', 'Drivetrain', 'Workshop'],
+      content: [
         {
           heading: 'Wipe Dirt Before Applying Lube',
           body: [
-            'The single biggest mistake cyclists make is adding wet lube directly onto a dusty chain. That creates an abrasive grinding paste that wears through cassette teeth. Always wipe the chain down with a microfiber rag and citrus degreaser first.'
-          ]
+            'The single biggest mistake cyclists make is adding wet lube directly onto a dusty chain. That creates an abrasive grinding paste that wears through cassette teeth. Always wipe the chain down with a microfiber rag and citrus degreaser first.',
+            'Apply one drop of synthetic lubricant per chain roller, spin the cranks backward for 30 seconds, and wipe off excess surface oil.'
+          ],
+          quote: 'A clean drivetrain saves between 5 to 9 watts of wasted mechanical drag.'
         }
       ]
     },
@@ -925,20 +781,116 @@ var STRIDE_DATA = (function () {
       id: 'tubeless-tires-guide',
       slug: 'tubeless-tires-guide',
       title: 'Tubeless vs. Inner Tubes: Why We Converted Our Entire Fleet',
-      date: 'Jul 30, 2026',
+      date: '2026-07-30',
       readTime: '5 min read',
-      author: 'Priya Sundaram',
-      authorRole: 'Endurance Racer & Club Lead',
-      category: 'Tech Deep-Dive',
+      author: {
+        name: 'Priya Sundaram',
+        role: 'Endurance Racer & Club Lead',
+        image: '../assets/woman1.jpg'
+      },
+      category: 'Tech & Fit',
       excerpt:
         'Lower tire pressures, virtually zero pinch flats, lower rolling resistance, and how liquid sealant seals 4mm glass punctures instantly.',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&auto=format&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&auto=format&fit=crop',
+      imageAlt: 'Tubeless road bicycle tire rolling smoothly over gravel',
       heroImageAlt: 'Tubeless road bicycle tire rolling smoothly over gravel',
-      sections: [
+      tags: ['Tubeless', 'Tire Pressure', 'Puncture Defense', 'Wheels'],
+      content: [
         {
           heading: 'The Magic of Lower Tire Pressure',
           body: [
-            'Without an inner tube to pinch against the rim edge, you can run 60-70 psi on 28mm road tires instead of 100 psi. The tire deforms over road imperfections instead of bouncing upward, making you both faster and significantly more comfortable.'
+            'Without an inner tube to pinch against the rim edge, you can run 60-70 psi on 28mm road tires instead of 100 psi. The tire deforms over road imperfections instead of bouncing upward, making you both faster and significantly more comfortable.',
+            'Modern liquid latex sealants seal thorn and glass punctures instantly while rolling, requiring just an annual refresh.'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'laser-bike-fit-guide',
+      slug: 'laser-bike-fit-guide',
+      title: 'Dialing Your Position: The Biomechanics of Laser Bike Fitting',
+      date: '2026-07-15',
+      readTime: '7 min read',
+      author: {
+        name: 'Karthik Raman',
+        role: 'Head Mechanic & Master Bike Fitter',
+        image: '../assets/men1.jpg'
+      },
+      category: 'Tech & Fit',
+      excerpt:
+        'Knee angle, pelvic tilt, saddle setback, and reach: how 3mm of adjustment cures numb hands, saddle sores, and lower back ache.',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=900&auto=format&fit=crop',
+      heroImage: 'https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=1200&auto=format&fit=crop',
+      imageAlt: 'Cyclist undergoing precision dynamic bike fit measurement',
+      heroImageAlt: 'Cyclist undergoing precision dynamic bike fit measurement',
+      tags: ['Bike Fit', 'Ergonomics', 'Cleat Alignment', 'Endurance'],
+      content: [
+        {
+          heading: 'Cleat Alignment: The Kinetic Anchor',
+          body: [
+            'Your connection to the pedals dictates hip rotation and knee tracking. Misaligned pedal cleats cause 80% of medial and lateral knee pain. By aligning the pedal spindle under the metatarsal head and matching your foot varus tilt with shims, power delivery becomes frictionless.'
+          ],
+          quote: 'Fit first, buy second. A perfectly fitted ₹50,000 bike outperforms an ill-fitting ₹2,000,000 superbike every single day.'
+        }
+      ]
+    },
+    {
+      id: 'coastal-gran-fondo-prep',
+      slug: 'coastal-gran-fondo-prep',
+      title: 'Fueling & Pacing Your First 160km Century Ride',
+      date: '2026-06-25',
+      readTime: '5 min read',
+      author: {
+        name: 'Vikram Mehta',
+        role: 'Club Ride Director',
+        image: '../assets/men3.jpg'
+      },
+      category: 'Training & Routes',
+      excerpt:
+        'Carb intake math (60-90g/hr), heart rate zone discipline, cadence targets, and mental strategies for conquering high wind miles.',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=900&auto=format&fit=crop',
+      heroImage: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=1200&auto=format&fit=crop',
+      imageAlt: 'Group peloton riding on scenic highway during sunrise',
+      heroImageAlt: 'Group peloton riding on scenic highway during sunrise',
+      tags: ['Gran Fondo', 'Century Ride', 'Hydration', 'Pacing'],
+      content: [
+        {
+          heading: 'Never Ride Faster Than Zone 2 in the First 80km',
+          body: [
+            'Adrenaline on the start line is your worst enemy. If you burn glycogen early, the dreaded wall awaits at kilometer 120. Stay strictly within Zone 2 endurance wattage, sip electrolytes every 15 minutes, and ride within drafting echelons when crosswinds pick up.'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hydraulic-vs-mechanical-disc',
+      slug: 'hydraulic-vs-mechanical-disc',
+      title: 'Hydraulic vs. Mechanical Disc Brakes: Stopping Power Compared',
+      date: '2026-06-10',
+      readTime: '4 min read',
+      author: {
+        name: 'Arjun Swaminathan',
+        role: 'Senior Workshop Technician',
+        image: '../assets/men2.jpg'
+      },
+      category: 'Maintenance',
+      excerpt:
+        'Why closed hydraulic mineral oil circuits offer one-finger modulation, zero cable friction, and reliable wet-weather descending control.',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=900&auto=format&fit=crop',
+      heroImage: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&auto=format&fit=crop',
+      imageAlt: 'Close-up of hydraulic disc caliper and heat-dissipating rotor',
+      heroImageAlt: 'Close-up of hydraulic disc caliper and heat-dissipating rotor',
+      tags: ['Disc Brakes', 'Mineral Oil', 'Brake Pads', 'Safety'],
+      content: [
+        {
+          heading: 'Single-Finger Lever Modulation',
+          body: [
+            'Mechanical cable disc brakes stretch and suffer cable housing friction. Hydraulic systems transfer hydraulic pressure evenly to dual opposing pistons, delivering 30% greater clamping force with a featherlight lever pull that prevents forearm fatigue on steep alpine descents.'
           ]
         }
       ]

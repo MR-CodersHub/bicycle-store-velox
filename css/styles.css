@@ -2736,7 +2736,7 @@ html[data-theme='dark'] .chip.is-active .chip__count {
 
 .modal__panel {
   position: relative;
-  width: min(52rem, 100%);
+  width: min(65rem, 100%);
   max-height: calc(100dvh - var(--space-8));
   overflow-y: auto;
   background: var(--bg);
@@ -3407,7 +3407,7 @@ html[dir='rtl'] .brands-list__item svg text {
   align-self: flex-start;
   padding: 0.4rem 0.9rem;
   background: var(--accent-soft);
-  border: 1px solid rgba(248, 113, 113, 0.35);
+  border: 1px solid var(--accent-hover);
   border-radius: var(--radius-pill);
   color: var(--accent-deep);
   font-weight: 600;

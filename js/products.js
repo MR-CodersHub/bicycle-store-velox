@@ -175,7 +175,6 @@
         { label: 'Road Bikes', key: 'road' },
         { label: 'Mountain Bikes', key: 'mountain' },
         { label: 'Hybrid & City', key: 'hybrid' },
-        { label: 'Electric E-Bikes', key: 'electric' },
         { label: 'Kids Bikes', key: 'kids' },
         { label: 'Accessories', key: 'accessories' },
         { label: 'On Sale', key: 'sale' }

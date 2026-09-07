@@ -39,10 +39,12 @@
      ----------------------------------------------------------------------- */
   function cardMarkup(p) {
     var featuredBadge = p.featured ? '<span class="blog-card__featured">Featured</span>' : '';
+    var imgSrc = p.image || p.heroImage || '';
+    var imgAlt = p.imageAlt || p.heroImageAlt || p.title || '';
     return (
       '<article class="blog-card" data-reveal>' +
         '<a class="blog-card__media" href="blog-details.html?id=' + encodeURIComponent(p.id) + '" aria-label="Read: ' + esc(p.title) + '">' +
-          '<img src="' + p.image + '" alt="' + esc(p.imageAlt) + '" loading="lazy" decoding="async" />' +
+          '<img src="' + imgSrc + '" alt="' + esc(imgAlt) + '" loading="lazy" decoding="async" />' +
         '</a>' +
         '<div class="blog-card__body">' +
           '<div class="blog-card__meta">' +
@@ -72,16 +74,20 @@
     var grid = document.querySelector('[data-blog-grid]');
     if (!grid) return;
     var DATA = window.STRIDE_DATA;
+    if (!DATA || !DATA.POSTS) return;
 
     var state = { cat: 'all', q: '' };
 
     /* Featured */
     var featuredWrap = document.querySelector('[data-blog-featured]');
-    var featured = DATA.POSTS.find(function (p) { return p.featured; });
+    var featured = DATA.POSTS.find(function (p) { return p.featured; }) || DATA.POSTS[0];
     if (featured && featuredWrap) {
+      var featImg = featured.image || featured.heroImage || '';
+      var featAlt = featured.imageAlt || featured.heroImageAlt || featured.title || '';
+      var authorName = typeof featured.author === 'object' && featured.author ? featured.author.name : (featured.author || 'Velox Cycles');
       featuredWrap.innerHTML =
         '<a class="blog-featured__media" href="blog-details.html?id=' + encodeURIComponent(featured.id) + '">' +
-          '<img src="' + featured.image + '" alt="' + esc(featured.imageAlt) + '" loading="lazy" decoding="async" />' +
+          '<img src="' + featImg + '" alt="' + esc(featAlt) + '" loading="lazy" decoding="async" />' +
         '</a>' +
         '<div class="blog-featured__body">' +
           '<span class="blog-card__cat">' + esc(featured.category) + '</span>' +
@@ -90,7 +96,7 @@
           '</h3>' +
           '<p class="blog-featured__excerpt">' + esc(featured.excerpt) + '</p>' +
           '<div class="blog-featured__meta">' +
-            '<span>By ' + esc(featured.author.name) + '</span>' +
+            '<span>By ' + esc(authorName) + '</span>' +
             '<span aria-hidden="true">·</span>' +
             '<time datetime="' + featured.date + '">' + prettyDate(featured.date) + '</time>' +
             '<span aria-hidden="true">·</span>' +
@@ -106,7 +112,9 @@
     var chips = Array.prototype.slice.call(document.querySelectorAll('[data-blog-cat]'));
     var counts = { all: DATA.POSTS.length };
     DATA.POSTS.forEach(function (p) {
-      counts[p.category] = (counts[p.category] || 0) + 1;
+      if (p.category) {
+        counts[p.category] = (counts[p.category] || 0) + 1;
+      }
     });
 
     chips.forEach(function (chip) {
@@ -138,7 +146,8 @@
     function render() {
       var list = DATA.POSTS.filter(function (p) {
         var okCat = state.cat === 'all' || p.category === state.cat;
-        var hay = (p.title + ' ' + p.excerpt + ' ' + p.tags.join(' ')).toLowerCase();
+        var tagsStr = Array.isArray(p.tags) ? p.tags.join(' ') : '';
+        var hay = ((p.title || '') + ' ' + (p.excerpt || '') + ' ' + tagsStr).toLowerCase();
         var okQ = !state.q || hay.indexOf(state.q) !== -1;
         return okCat && okQ;
       });
@@ -172,6 +181,7 @@
   function renderArticleMeta() { /* meta rendered inline below */ }
 
   function contentMarkup(content) {
+    if (!Array.isArray(content)) return '';
     return content.map(function (block) {
       var heading = block.heading ? '<h2>' + esc(block.heading) + '</h2>' : '';
       var paras = (block.body || []).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('');
@@ -183,12 +193,13 @@
   }
 
   function recentMarkup(excludeId, limit) {
-    var others = DATA.POSTS.filter(function (p) { return p.id !== excludeId; }).slice(0, limit);
+    var others = (DATA.POSTS || []).filter(function (p) { return p.id !== excludeId; }).slice(0, limit);
     return others.map(function (p) {
+      var itemImg = p.image || p.heroImage || '';
       return (
         '<li class="widget__recent-item">' +
           '<a href="blog-details.html?id=' + encodeURIComponent(p.id) + '">' +
-            '<img src="' + p.image + '" alt="" loading="lazy" decoding="async" />' +
+            '<img src="' + itemImg + '" alt="" loading="lazy" decoding="async" />' +
           '</a>' +
           '<div>' +
             '<a class="widget__recent-title" href="blog-details.html?id=' + encodeURIComponent(p.id) + '">' + esc(p.title) + '</a>' +
@@ -216,36 +227,44 @@
       return;
     }
 
-    document.title = post.title + ' — Stride';
+    document.title = post.title + ' — Velox Cycles';
+
+    var authorName = typeof post.author === 'object' && post.author ? post.author.name : (post.author || 'Velox Specialist');
+    var authorRole = typeof post.author === 'object' && post.author ? post.author.role : (post.authorRole || 'Master Bike Technician');
+    var authorImage = typeof post.author === 'object' && post.author && post.author.image ? post.author.image : '../assets/men1.jpg';
+    var postImg = post.image || post.heroImage || '';
+    var postAlt = post.imageAlt || post.heroImageAlt || post.title || '';
+    var postTags = Array.isArray(post.tags) ? post.tags : [];
+    var postBlocks = Array.isArray(post.content) ? post.content : (Array.isArray(post.sections) ? post.sections : []);
 
     wrap.innerHTML =
       '<span class="blog-card__cat">' + esc(post.category) + '</span>' +
       '<h1 class="article__title">' + esc(post.title) + '</h1>' +
       '<div class="article__meta">' +
         '<span class="article__author-chip">' +
-          '<img src="' + post.author.image + '" alt="" loading="lazy" decoding="async" />' +
-          '<span>By <strong>' + esc(post.author.name) + '</strong> · ' + esc(post.author.role) + '</span>' +
+          '<img src="' + authorImage + '" alt="" loading="lazy" decoding="async" />' +
+          '<span>By <strong>' + esc(authorName) + '</strong> · ' + esc(authorRole) + '</span>' +
         '</span>' +
         '<time datetime="' + post.date + '">' + prettyDate(post.date) + '</time>' +
         '<span aria-hidden="true">·</span>' +
         '<span>' + esc(post.readTime) + '</span>' +
       '</div>' +
       '<figure class="article__hero">' +
-        '<img src="' + post.image + '" alt="' + esc(post.imageAlt) + '" />' +
+        '<img src="' + postImg + '" alt="' + esc(postAlt) + '" />' +
       '</figure>' +
-      '<div class="article__body">' + contentMarkup(post.content) + '</div>' +
+      '<div class="article__body">' + contentMarkup(postBlocks) + '</div>' +
       '<div class="article__footer">' +
         '<div class="tag-cloud" aria-label="Tags">' +
-          post.tags.map(function (t) {
+          postTags.map(function (t) {
             return '<a class="tag" href="blog.html?cat=' + encodeURIComponent(t) + '">#' + esc(t) + '</a>';
           }).join('') +
         '</div>' +
         '<div class="author-box">' +
-          '<img class="author-box__photo" src="' + post.author.image + '" alt="' + esc(post.author.name) + '" loading="lazy" />' +
+          '<img class="author-box__photo" src="' + authorImage + '" alt="' + esc(authorName) + '" loading="lazy" />' +
           '<div>' +
             '<span class="small-caps">Written by</span>' +
-            '<h3 class="author-box__name">' + esc(post.author.name) + '</h3>' +
-            '<p class="author-box__role">' + esc(post.author.role) + ' at Stride.</p>' +
+            '<h3 class="author-box__name">' + esc(authorName) + '</h3>' +
+            '<p class="author-box__role">' + esc(authorRole) + ' at Velox Cycles.</p>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -257,7 +276,7 @@
     var catList = document.querySelector('[data-widget-categories]');
     if (catList) {
       catList.innerHTML = DATA.categories().map(function (c) {
-        var n = DATA.POSTS.filter(function (p) { return p.category === c; }).length;
+        var n = (DATA.POSTS || []).filter(function (p) { return p.category === c; }).length;
         return (
           '<li class="widget__link"><a href="' + catHref(c) + '">' + esc(c) + '</a><span>' + n + '</span></li>'
         );
@@ -267,8 +286,8 @@
     var tagsWrap = document.querySelector('[data-widget-tags]');
     if (tagsWrap) {
       var allTags = [];
-      DATA.POSTS.forEach(function (p) {
-        p.tags.forEach(function (t) { if (allTags.indexOf(t) === -1) allTags.push(t); });
+      (DATA.POSTS || []).forEach(function (p) {
+        (p.tags || []).forEach(function (t) { if (allTags.indexOf(t) === -1) allTags.push(t); });
       });
       tagsWrap.innerHTML = allTags.map(function (t) {
         return '<a class="tag" href="blog.html?cat=' + encodeURIComponent(t) + '">#' + esc(t) + '</a>';

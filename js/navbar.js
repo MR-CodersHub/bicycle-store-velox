@@ -20,7 +20,8 @@
     { label: 'Home', target: 'index.html' },
     { label: 'Home 2', target: 'home-2.html' },
     { label: 'About', target: 'about.html' },
-    { label: 'Products', target: 'products.html' },
+    { label: 'Bikes', target: 'bikes.html' },
+    { label: 'Accessories', target: 'accessories.html' },
     { label: 'Blog', target: 'blog.html' },
     { label: 'Contact', target: 'contact.html' }
   ];
@@ -66,7 +67,7 @@
     '<span class="search__icon" aria-hidden="true">' +
     '<svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
     '</span>' +
-    '<input type="search" placeholder="Search for shoes, brands…" aria-label="Search products" class="search__input" data-search-input />' +
+    '<input type="search" placeholder="Search for brands…" aria-label="Search products" class="search__input" data-search-input />' +
     '</form>' +
 
     '<button class="icon-btn icon-btn--theme" type="button" data-theme-toggle aria-label="Toggle dark mode">' +
@@ -150,8 +151,8 @@
     '<li><a href="' + root + 'pages/products.html?cat=sale">Sale</a></li>' +
     '<li><a href="' + root + 'pages/products.html?cat=sports">Sports</a></li>' +
     '<li><a href="' + root + 'pages/products.html?cat=kids">Kids</a></li>' +
-    '<li><a href="' + root + 'pages/products.html?cat=women">Women</a></li>' +
-    '<li><a href="' + root + 'pages/products.html?cat=men">Men</a></li>' +
+    '<li><a href="' + root + 'pages/products.html?cat=bikes">Bikes</a></li>' +
+    '<li><a href="' + root + 'pages/products.html?cat=accessories">Accessories</a></li>' +
     '</ul>' +
     '</div>' +
     '</div>' +
