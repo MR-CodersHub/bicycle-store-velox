@@ -26,7 +26,7 @@
   </script>
 </head>
 
-<body>
+<body class="page-home">
   <!-- navbar.js injects the shared utility bar, header and footer here -->
 
   <main id="top">
@@ -37,6 +37,11 @@
       <div class="hero__bg-media">
         <img src="./assets/hero-bg.png"
           alt="Velox Electric Bike" class="hero__bg-img" loading="eager" decoding="async" />
+        <script>
+          if (document.documentElement.getAttribute('dir') === 'rtl') {
+            document.currentScript.previousElementSibling.src = './assets/hero-bg-rtl.png';
+          }
+        </script>
       </div>
 
       <div class="hero__content-wrap">
@@ -177,13 +182,13 @@
            ============================================================ -->
     <section class="section section--soft" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
       <div class="wrap" data-reveal>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 2.5rem; align-items: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 2.5rem;">
           <div>
             <span class="sec-eyebrow" style="color: var(--accent); font-weight: 700;">Shimano & SRAM Certified Workshop</span>
-            <h2 class="sec-title" style="margin-top: 0.5rem; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.15;">
+            <h2 class="sec-title" style="margin-top: 0.5rem; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.15; text-align: start;">
               Precision Maintenance.<br />Guaranteed 24-Hour Turnaround.
             </h2>
-            <p class="sec-lede" style="margin-top: 1rem; color: var(--ink-soft); line-height: 1.6;">
+            <p class="sec-lede" style="margin-top: 1rem; color: var(--ink-soft); line-height: 1.6; text-align: start;">
               Keep your shifting crisp and hydraulic brakes razor-sharp. Our master technicians service every bike with ultrasonic drivetrain baths, digital laser wheel truing, and authorized diagnostic scans.
             </p>
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">

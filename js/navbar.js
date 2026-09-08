@@ -109,7 +109,7 @@
     '<div class="footer__col footer__col--wide">' +
     '<a href="' + root + 'index.html" class="brand footer__brand" aria-label="Stride — home" style="margin-bottom: 1rem; display: inline-flex; align-items: center; text-decoration: none;">' +
     '<img src="' + root + 'assets/logo.png" alt="STRIDE Logo" class="brand__logo-img" />' +
-    '<span class="brand__word" style="color: #ffffff; font-weight: 800; font-size: 1.25rem; letter-spacing: 0.05em;">VELOX</span>' +
+    '<span class="brand__word" style="color: white !important; font-weight: 800; font-size: 1.25rem; letter-spacing: 0.05em;">VELOX</span>' +
     '</a>' +
     '<p>' +
     '14 Khader Nawaz Khan Road,<br />' +

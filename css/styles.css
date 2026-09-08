@@ -355,8 +355,6 @@ figure {
   top: 0;
   z-index: 50;
   background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: saturate(140%) blur(10px);
 }
 
 .header__inner {
@@ -428,7 +426,6 @@ figure {
   right: 0;
   bottom: -2px;
   height: 2px;
-  background: var(--accent);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 220ms var(--ease-out);
@@ -959,85 +956,7 @@ figure {
   color: #0f172a;
 }
 
-/* --------------------------------------------------------------------------
-   Home Hero (.hero--skot) - Preserved Layout Across All Widths
-   -------------------------------------------------------------------------- */
-.hero--skot .hero__bottom-row--skot {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  align-items: flex-end !important;
-  width: 100% !important;
-  gap: clamp(0.5rem, 2vw, 2rem) !important;
-  pointer-events: auto;
-}
 
-@media (max-width: 880px) {
-  .hero--skot {
-    min-height: clamp(480px, 80vh, 720px);
-  }
-
-  .hero--skot .hero__bg-img {
-    object-position: center bottom !important;
-    opacity: 1 !important;
-  }
-
-  .hero--skot .hero__content-wrap {
-    padding: clamp(1.25rem, 3.5vw, 2.5rem) clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 2vw, 1.5rem);
-  }
-
-  .hero__spec-col {
-    padding-left: clamp(0.5rem, 3vw, 4rem);
-    margin-bottom: clamp(1.5rem, 4.5vh, 5rem);
-  }
-
-  .hero__preview-col {
-    margin-bottom: clamp(0.5rem, 2vh, 1.5rem);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero--skot {
-    min-height: clamp(420px, 75vh, 560px);
-  }
-
-  .hero__skot-title {
-    font-size: clamp(1.5rem, 7vw, 2.2rem);
-    margin: 0;
-  }
-
-  .hero__spec-code {
-    font-size: clamp(1.8rem, 6.5vw, 2.5rem);
-  }
-
-  .hero__spec-label {
-    font-size: clamp(0.7rem, 2.6vw, 0.85rem);
-  }
-
-  .hero__spec-col {
-    padding-left: clamp(0.25rem, 2vw, 1.5rem);
-    margin-bottom: clamp(1rem, 3.5vh, 2.5rem);
-  }
-
-  .hero__preview-icon {
-    width: 38px;
-    height: 34px;
-    border-radius: 10px;
-  }
-
-  .hero__preview-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .hero__preview-name {
-    font-size: 0.8rem;
-  }
-
-  .hero__preview-category {
-    font-size: 0.65rem;
-  }
-}
 
 /* --------------------------------------------------------------------------
    Hero Redesign (Editorial Reference Layout)
@@ -6465,15 +6384,251 @@ body {
   }
 }
 
-/* 2. Home Page Hero (.hero--skot) - Preserved Layout Across ALL Widths */
+/* ==========================================================================
+   1. Custom Transparent Navbar (Exclusively for index.html / Home Page)
+   ========================================================================== */
+body.page-home .header {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 50 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Navlinks with crisp contrast against transparent/light background - Midnight Blue */
+body.page-home .primary-nav__link {
+  color: var(--ink-soft) !important;
+  font-weight: 600 !important;
+  font-size: var(--text-sm) !important;
+  letter-spacing: -0.01em !important;
+  transition: color 0.2s ease, opacity 0.2s ease !important;
+}
+
+body.page-home .primary-nav__link:hover {
+  color: var(--ink) !important;
+  opacity: 0.8 !important;
+}
+
+body.page-home .primary-nav__link.is-active {
+  color: var(--ink) !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+
+/* Brand Wordmark & Logo */
+body.page-home .brand {
+  color: #0f172a !important;
+}
+
+body.page-home .brand__word {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Search bar with clean contrasting glass background */
+body.page-home .search {
+  background: rgba(255, 255, 255, 0.65) !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.2s ease !important;
+}
+
+body.page-home .search:focus-within {
+  background: #ffffff !important;
+  border-color: #0f172a !important;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08) !important;
+}
+
+body.page-home .search__input {
+  color: #0f172a !important;
+}
+
+body.page-home .search__input::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+body.page-home .search__icon {
+  color: #475569 !important;
+}
+
+/* Action Icon Buttons */
+body.page-home .icon-btn {
+  color: #0f172a !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+body.page-home .icon-btn:hover {
+  background: #ffffff !important;
+  border-color: #0f172a !important;
+  color: #0f172a !important;
+  transform: translateY(-1px) !important;
+}
+
+body.page-home .icon-btn__count {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+
+/* Header CTA Button */
+body.page-home .header__cta {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18) !important;
+}
+
+body.page-home .header__cta:hover {
+  background: #1e293b !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25) !important;
+}
+
+/* Mobile Nav Toggle Lines */
+body.page-home .nav-toggle__line {
+  background-color: #0f172a !important;
+}
+
+/* Mobile Nav Dropdown */
+body.page-home .mobile-nav {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+body.page-home .mobile-nav__link {
+  color: midnightblue !important;
+  font-weight: 600 !important;
+}
+
+body.page-home .mobile-nav__link:hover,
+body.page-home .mobile-nav__link.is-active {
+  color: midnightblue !important;
+  font-weight: 700 !important;
+}
+
+/* Dark Mode Contrast Maintenance for index.html (Header floats over light #eff3ee hero) */
+html[data-theme='dark'] body.page-home .header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] body.page-home .primary-nav__link {
+  color: midnightblue !important;
+  opacity: 1 !important;
+}
+
+html[data-theme='dark'] body.page-home .primary-nav__link:hover {
+  color: midnightblue !important;
+  opacity: 0.8 !important;
+}
+
+html[data-theme='dark'] body.page-home .primary-nav__link.is-active {
+  color: midnightblue !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+html[data-theme='dark'] body.page-home .primary-nav__link::after {
+  background: midnightblue !important;
+}
+
+html[data-theme='dark'] body.page-home .brand,
+html[data-theme='dark'] body.page-home .brand__word {
+  color: #0f172a !important;
+}
+
+html[data-theme='dark'] body.page-home .search {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(15, 23, 42, 0.18) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme='dark'] body.page-home .search:focus-within {
+  background: #ffffff !important;
+  border-color: #0f172a !important;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-theme='dark'] body.page-home .search__input {
+  color: #0f172a !important;
+}
+
+html[data-theme='dark'] body.page-home .search__input::placeholder {
+  color: #64748b !important;
+}
+
+html[data-theme='dark'] body.page-home .search__icon {
+  color: #475569 !important;
+}
+
+html[data-theme='dark'] body.page-home .icon-btn {
+  color: #0f172a !important;
+  background: rgba(255, 255, 255, 0.65) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+html[data-theme='dark'] body.page-home .icon-btn:hover {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #0f172a !important;
+}
+
+html[data-theme='dark'] body.page-home .header__cta {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+}
+
+html[data-theme='dark'] body.page-home .header__cta:hover {
+  background: #1e293b !important;
+  border-color: #1e293b !important;
+}
+
+html[data-theme='dark'] body.page-home .nav-toggle__line {
+  background-color: #0f172a !important;
+}
+
+html[data-theme='dark'] body.page-home .mobile-nav {
+  background: rgba(13, 27, 42, 0.95) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme='dark'] body.page-home .mobile-nav__link {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme='dark'] body.page-home .mobile-nav__link.is-active {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   2. Home Page Hero (.hero--skot) - Preserved Composition & Scaled Layout
+   ========================================================================== */
 .hero--skot {
   position: relative !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  height: 100vh !important;
+  height: 100dvh !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
   overflow: hidden !important;
   background-color: #eff3ee !important;
-  min-height: clamp(520px, 86vh, 880px) !important;
+  color: #111827 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
 
 .hero--skot .hero__bg-media {
@@ -6482,16 +6637,24 @@ body {
   z-index: 1 !important;
   pointer-events: none !important;
   overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .hero--skot .hero__bg-img {
   width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
-  object-position: center bottom !important;
+  object-position: center center !important;
   display: block !important;
   opacity: 1 !important;
   filter: none !important;
+  /* Proportional containment: keeps bike strictly within its visual space with ample clearance from CTA */
+  transform: scale(clamp(0.62, 0.60 + 0.20 * (100vw / 1440), 0.86)) translate(-5%, -0.5%) !important;
+  transform-origin: center center !important;
 }
 
 .hero--skot .hero__content-wrap {
@@ -6499,41 +6662,45 @@ body {
   z-index: 2 !important;
   width: 100% !important;
   max-width: 1440px !important;
+  height: 100% !important;
   margin: 0 auto !important;
   box-sizing: border-box !important;
   flex: 1 !important;
-  min-height: inherit !important;
   pointer-events: none !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
-  padding: clamp(1.25rem, 3.5vw, 3.5rem) clamp(1rem, 4vw, 4.5rem) clamp(0.75rem, 2vw, 1.75rem) !important;
+  justify-content: space-between ;
+  padding: clamp(4.6rem, 8vh, 6.5rem) clamp(0.85rem, 4vw, 4.5rem) clamp(0.6rem, 2.2vw, 2rem) !important;
 }
 
 .hero--skot .hero__top-row {
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   align-items: flex-start !important;
   width: 100% !important;
   pointer-events: auto !important;
 }
 
+.hero--skot .hero__headline-col {
+  max-width: clamp(190px, 45vw, 600px) !important;
+}
+
 .hero--skot .hero__skot-title {
   font-family: var(--font-display, 'Inter', system-ui, sans-serif) !important;
-  font-size: clamp(1.5rem, 4.8vw, 4.4rem) !important;
+  font-size: clamp(1.1rem, 4.4vw, 4.2rem) !important;
   font-weight: 800 !important;
-  line-height: 1.12 !important;
+  line-height: 1.1 !important;
   letter-spacing: -0.035em !important;
   color: #111827 !important;
-  margin: 0 !important;
+  margin-top: 20px !important;
 }
 
 .hero--skot .hero__skot-sub {
   display: block !important;
   font-weight: 800 !important;
   color: #111827 !important;
-  margin-top: 0.15rem !important;
-  font-size: 0.9em !important;
+  margin-top: clamp(0.1rem, 0.35vw, 0.3rem) !important;
+  font-size: 0.88em !important;
 }
 
 /* STRICT PRESERVATION: Bottom row ALWAYS stays a horizontal row */
@@ -6548,54 +6715,61 @@ body {
   padding-top: 0 !important;
 }
 
+/* C45 Spec: Sits cleanly lifted into its designated space without overlapping background shapes */
 .hero--skot .hero__spec-col {
-  max-width: 280px !important;
+  max-width: clamp(110px, 22vw, 280px) !important;
   z-index: 5 !important;
   display: flex !important;
   flex-direction: column !important;
-  padding-left: clamp(0.75rem, 4vw, 9rem) !important;
-  margin-bottom: clamp(1.75rem, 5.5vh, 9rem) !important;
+  margin-bottom: clamp(0.85rem, 7.5vw, 9rem) !important;
+  padding-left: clamp(0.2rem, 3vw, 5rem) !important;
   flex-shrink: 0 !important;
 }
 
 .hero--skot .hero__spec-code {
   font-family: var(--font-display, 'Inter', system-ui, sans-serif) !important;
-  font-size: clamp(1.85rem, 4.5vw, 3.8rem) !important;
+  font-size: clamp(1.2rem, 4.2vw, 3.8rem) !important;
   font-weight: 800 !important;
   color: #0f172a !important;
   line-height: 1 !important;
   letter-spacing: -0.04em !important;
-  margin: 0 0 0.25rem 0 !important;
+  margin: 0 0 clamp(0.1rem, 0.3vw, 0.35rem) 0 !important;
 }
 
 .hero--skot .hero__spec-label {
   display: block !important;
-  font-size: clamp(0.72rem, 1.1vw, 1rem) !important;
+  font-size: clamp(0.52rem, 1.1vw, 1rem) !important;
   font-weight: 500 !important;
   color: #64748b !important;
   letter-spacing: 0.02em !important;
   white-space: nowrap !important;
 }
 
+/* DB50QT Preview CTA: Kept completely separate from the bicycle at all times */
 .hero--skot .hero__preview-col {
   z-index: 5 !important;
-  margin-bottom: clamp(0.5rem, 2vh, 1.5rem) !important;
+  margin-bottom: clamp(0.25rem, 1.2vw, 1.25rem) !important;
   flex-shrink: 0 !important;
 }
 
 .hero--skot .hero__preview-card {
   display: flex !important;
   align-items: center !important;
-  gap: clamp(0.45rem, 1.5vw, 0.95rem) !important;
+  gap: clamp(0.3rem, 0.85vw, 0.95rem) !important;
   text-decoration: none !important;
   min-width: auto !important;
+  transition: transform 0.2s ease !important;
+}
+
+.hero--skot .hero__preview-card:hover {
+  transform: translateY(-2px) !important;
 }
 
 .hero--skot .hero__preview-icon {
-  width: clamp(38px, 4.5vw, 52px) !important;
-  height: clamp(34px, 4vw, 44px) !important;
+  width: clamp(20px, 3vw, 48px) !important;
+  height: clamp(18px, 2.6vw, 40px) !important;
   background: #0f172a !important;
-  border-radius: 12px !important;
+  border-radius: clamp(5px, 0.9vw, 12px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -6605,92 +6779,67 @@ body {
 }
 
 .hero--skot .hero__preview-icon svg {
-  width: clamp(18px, 2.5vw, 26px) !important;
-  height: clamp(18px, 2.5vw, 26px) !important;
+  width: clamp(10px, 1.6vw, 22px) !important;
+  height: clamp(10px, 1.6vw, 22px) !important;
 }
 
 .hero--skot .hero__preview-details {
   display: flex !important;
   flex-direction: column !important;
-  line-height: 1.2 !important;
+  line-height: 1.15 !important;
 }
 
 .hero--skot .hero__preview-name {
-  font-size: clamp(0.75rem, 1.2vw, 0.925rem) !important;
+  font-size: clamp(0.6rem, 1vw, 0.92rem) !important;
   font-weight: 700 !important;
   color: #0f172a !important;
+  white-space: nowrap !important;
 }
 
 .hero--skot .hero__preview-category {
-  font-size: clamp(0.62rem, 1vw, 0.75rem) !important;
+  font-size: clamp(0.46rem, 0.75vw, 0.72rem) !important;
   color: #64748b !important;
   font-weight: 500 !important;
   white-space: nowrap !important;
 }
 
-.hero--skot .hero__preview-arrow svg {
-  width: clamp(12px, 1.5vw, 16px) !important;
-  height: clamp(12px, 1.5vw, 16px) !important;
+.hero--skot .hero__preview-arrow {
+  display: flex !important;
+  align-items: center !important;
 }
 
-/* 3. Mobile Screen Refinements (<= 640px) */
+.hero--skot .hero__preview-arrow svg {
+  width: clamp(8px, 1.1vw, 14px) !important;
+  height: clamp(8px, 1.1vw, 14px) !important;
+}
+
+@media (max-width: 380px) {
+  .hero--skot .hero__preview-arrow {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   2b. RTL Hero Section Refinements (hero-bg-rtl support)
+   ========================================================================== */
+html[dir='rtl'] .hero--skot .hero__bg-img {
+  content: url('../assets/hero-bg-rtl.png') !important;
+  transform: scale(clamp(0.60, 0.58 + 0.20 * (100vw / 1440), 0.84)) translate(-4%, -0.5%) !important;
+  transform-origin: center center !important;
+}
+
+html[dir='rtl'] .hero--skot .hero__spec-col {
+  padding-left: 0 !important;
+  padding-right: clamp(0.2rem, 3vw, 5rem) !important;
+  margin-bottom: clamp(0.5rem, 2.5vw, 3rem) !important;
+}
+
+html[dir='rtl'] .hero--skot .hero__preview-arrow {
+  transform: scaleX(-1) !important;
+}
+
+/* 3. Mobile Category Quicknav Refinements (<= 640px) */
 @media (max-width: 640px) {
-  .hero--skot {
-    min-height: clamp(230px, 62vw, 275px) !important;
-    height: clamp(230px, 62vw, 275px) !important;
-  }
-
-  .hero--skot .hero__content-wrap {
-    padding: 0.65rem 0.85rem 0.4rem !important;
-  }
-
-  .hero--skot .hero__skot-title {
-    font-size: clamp(1.15rem, 4.8vw, 1.55rem) !important;
-    line-height: 1.1 !important;
-    margin: 0 !important;
-  }
-
-  .hero--skot .hero__skot-sub {
-    font-size: 0.88em !important;
-    margin-top: 0.1rem !important;
-  }
-
-  .hero--skot .hero__bottom-row--skot {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: flex-end !important;
-    width: 100% !important;
-    gap: 0.5rem !important;
-  }
-
-  .hero--skot .hero__spec-col {
-    padding-left: 0.25rem !important;
-    margin-bottom: 0.25rem !important;
-    flex-shrink: 0 !important;
-  }
-
-  .hero--skot .hero__spec-code {
-    font-size: clamp(1.25rem, 4.5vw, 1.65rem) !important;
-    margin: 0 !important;
-    line-height: 1 !important;
-  }
-
-  .hero--skot .hero__spec-label {
-    font-size: 0.65rem !important;
-    white-space: nowrap !important;
-  }
-
-  .hero--skot .hero__preview-col {
-    margin-bottom: 0.25rem !important;
-    flex-shrink: 0 !important;
-  }
-
-  .hero--skot .hero__preview-card {
-    gap: 0.35rem !important;
-    min-width: auto !important;
-  }
-
   .category-quicknav {
     padding: 0.85rem 0 !important;
   }
@@ -6703,31 +6852,6 @@ body {
   .category-quicknav__grid .chip {
     padding: 0.5rem 0.65rem !important;
     font-size: 0.8rem !important;
-  }
-
-  .hero--skot .hero__preview-icon {
-    width: clamp(28px, 3.8vw, 36px) !important;
-    height: clamp(26px, 3.4vw, 32px) !important;
-    border-radius: 8px !important;
-  }
-
-  .hero--skot .hero__preview-icon svg {
-    width: clamp(14px, 2vw, 18px) !important;
-    height: clamp(14px, 2vw, 18px) !important;
-  }
-
-  .hero--skot .hero__preview-name {
-    font-size: clamp(0.7rem, 2.2vw, 0.82rem) !important;
-  }
-
-  .hero--skot .hero__preview-category {
-    font-size: clamp(0.55rem, 1.8vw, 0.66rem) !important;
-    white-space: nowrap !important;
-  }
-
-  .hero--skot .hero__preview-arrow svg {
-    width: clamp(10px, 1.5vw, 14px) !important;
-    height: clamp(10px, 1.5vw, 14px) !important;
   }
 }
 
@@ -6806,36 +6930,6 @@ body {
 
 /* 5. Extra Narrow Screens (<= 360px) */
 @media (max-width: 360px) {
-  .hero--skot .hero__preview-arrow {
-    display: none !important;
-  }
-
-  .hero--skot .hero__spec-code {
-    font-size: 1.4rem !important;
-  }
-
-  .hero--skot .hero__spec-label {
-    font-size: 0.58rem !important;
-  }
-
-  .hero--skot .hero__preview-icon {
-    width: 26px !important;
-    height: 24px !important;
-  }
-
-  .hero--skot .hero__preview-icon svg {
-    width: 13px !important;
-    height: 13px !important;
-  }
-
-  .hero--skot .hero__preview-name {
-    font-size: 0.68rem !important;
-  }
-
-  .hero--skot .hero__preview-category {
-    font-size: 0.52rem !important;
-  }
-
   .wrap {
     padding: 0 0.65rem !important;
   }

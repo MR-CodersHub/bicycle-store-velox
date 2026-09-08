@@ -100,6 +100,14 @@
       try { localStorage.setItem('stride-dir', dir); } catch (e) { /* ignore */ }
     }
     syncRtlButtons(dir);
+
+    /* Switch hero background image between LTR and RTL on home page */
+    var heroImg = document.querySelector('.hero--skot .hero__bg-img');
+    if (heroImg) {
+      var isIndex = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase() === 'index.html';
+      var prefix = isIndex ? './' : '../';
+      heroImg.src = dir === 'rtl' ? prefix + 'assets/hero-bg-rtl.png' : prefix + 'assets/hero-bg.png';
+    }
   }
 
   function initRtl() {
