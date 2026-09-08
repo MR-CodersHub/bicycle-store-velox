@@ -134,6 +134,12 @@
       var DATA = window.STRIDE_DATA;
       if (!DATA) return;
 
+      if (window.StrideCart && typeof window.StrideCart.setResolver === 'function') {
+        window.StrideCart.setResolver(function (id) {
+          return DATA.getProduct(id);
+        });
+      }
+
       // Filter only accessories
       var accOnly = DATA.PRODUCTS.filter(function (p) {
         return p.category === 'accessories';
@@ -273,6 +279,13 @@
               window.StrideCart.add(id);
               window.StrideCart.open();
             }
+            var originalText = btn.innerHTML;
+            btn.innerHTML = 'Added to Bag ✓';
+            btn.style.opacity = '0.9';
+            setTimeout(function () {
+              btn.innerHTML = originalText;
+              btn.style.opacity = '';
+            }, 1200);
           });
         });
       }

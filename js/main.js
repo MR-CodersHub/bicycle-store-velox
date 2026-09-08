@@ -261,7 +261,24 @@
   }
 
   function cartLookup(id) {
-    return cartResolver ? cartResolver(id) : null;
+    if (cartResolver) {
+      var r = cartResolver(id);
+      if (r) return r;
+    }
+    if (window.STRIDE_DATA) {
+      if (typeof window.STRIDE_DATA.getProduct === 'function') {
+        var p = window.STRIDE_DATA.getProduct(id);
+        if (p) return p;
+      }
+      if (Array.isArray(window.STRIDE_DATA.PRODUCTS)) {
+        for (var i = 0; i < window.STRIDE_DATA.PRODUCTS.length; i++) {
+          if (window.STRIDE_DATA.PRODUCTS[i].id === id) {
+            return window.STRIDE_DATA.PRODUCTS[i];
+          }
+        }
+      }
+    }
+    return null;
   }
 
   function renderCart() {
@@ -278,7 +295,7 @@
     if (!items) return;
 
     if (!cartItems.length) {
-      items.innerHTML = '<p class="drawer__empty">Your bag is empty. Add a pair to get started.</p>';
+      items.innerHTML = '<p class="drawer__empty">Your bag is empty. Explore our bikes & accessories to get started.</p>';
       if (subtotalEl) subtotalEl.textContent = formatRupees(0);
       if (countEl) countEl.textContent = '(0)';
       return;
@@ -395,12 +412,16 @@
   }
 
   function cartAdd(id) {
-    if (!cartLookup(id)) return;
+    var p = cartLookup(id);
+    if (!p) return;
     var existing = cartItems.filter(function (c) { return c.id === id; })[0];
     if (existing) existing.qty += 1;
     else cartItems.push({ id: id, qty: 1 });
     saveCart();
     renderCart();
+    if (typeof showToast === 'function') {
+      showToast(p.name + ' added to your bag.');
+    }
   }
 
   function cartRemove(id) {
@@ -584,7 +605,9 @@
     });
   }
 
-  function openQuickView(product) {
+  function openQuickView(productOrId) {
+    if (!productOrId) return;
+    var product = typeof productOrId === 'string' ? cartLookup(productOrId) : productOrId;
     if (!product) return;
     ensureQuickView();
     quickViewContent.innerHTML = quickViewMarkup(product);
