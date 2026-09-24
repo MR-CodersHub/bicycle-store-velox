@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign in or create an account with Velox Cycles Chennai. Access workshop service booking history, track bike orders, and join club rides."
+    />
+    <title>Login &amp; Sign Up — Velox Cycles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="../assets/logo.png" />
+    <script>
+      try {
+        var t = localStorage.getItem('stride-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        var d = localStorage.getItem('stride-dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    </script>
+    <style>
+      body.page-auth {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-soft);
+        margin: 0;
+      }
+      .auth-topbar {
+        padding: 1rem clamp(1.25rem, 5vw, 3rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border-soft);
+        background: var(--surface);
+      }
+      .auth-main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(2rem, 5vw, 3.5rem) 1rem;
+      }
+      .auth-card-wrap {
+        width: 100%;
+        max-width: 30rem;
+        margin: 0 auto;
+      }
+      .pwd-input-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .pwd-input-wrap input {
+        padding-inline-end: 2.75rem !important;
+        width: 100%;
+      }
+      .pwd-toggle {
+        position: absolute;
+        inset-inline-end: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        padding: 0.25rem;
+        color: var(--ink-soft);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 160ms ease;
+      }
+      .pwd-toggle:hover {
+        color: var(--accent) !important;
+      }
+      .contact-tabs {
+        border-radius: 9999px !important;
+        background: var(--border-soft) !important;
+        border: 1px solid var(--border) !important;
+        padding: 5px !important;
+        gap: 4px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+      .contact-tab-btn {
+        border-radius: 9999px !important;
+        padding: 0.65rem 1.6rem !important;
+        font-weight: 700 !important;
+        transition: all 200ms ease !important;
+      }
+      .contact-tab-btn.is-active,
+      .contact-tab-btn[aria-selected="true"] {
+        background: var(--accent) !important;
+        color: #ffffff !important;
+        box-shadow: 0 2px 8px rgba(85, 107, 47, 0.3) !important;
+      }
+      .btn--social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: 9999px !important;
+        background: var(--surface);
+        color: var(--ink);
+        font-weight: 600;
+        font-size: 0.88rem;
+        cursor: pointer;
+        transition: all 160ms ease;
+        font-family: inherit;
+      }
+      .btn--social:hover {
+        background: var(--bg-soft);
+        border-color: var(--ink-soft);
+        transform: translateY(-1px);
+      }
+      .auth-divider {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0.5rem 0;
+      }
+      .auth-divider__line {
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+      .auth-divider__text {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--ink-muted);
+        font-weight: 600;
+      }
+      .form-card .btn--primary {
+        border-radius: 9999px !important;
+      }
+    </style>
+  </head>
+  <body class="page-auth">
+    <!-- Top action bar with only logo and RTL & Theme toggles -->
+    <header class="auth-topbar">
+      <a href="../index.html" class="brand" aria-label="Velox Cycles — return to home" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem;">
+        <img src="../assets/logo.png" alt="Velox Logo" style="height: 32px; width: auto;" />
+        <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; letter-spacing: 0.05em; color: var(--ink);">VELOX</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <button class="icon-btn icon-btn--theme" type="button" data-theme-toggle aria-label="Toggle dark mode" style="border: 1px solid var(--border); background: var(--bg); cursor: pointer;">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </button>
+
+        <button class="icon-btn icon-btn--rtl" type="button" data-rtl-toggle aria-label="Toggle RTL layout" style="border: 1px solid var(--border); background: var(--bg); cursor: pointer; height: 40px;">RTL</button>
+      </div>
+    </header>
+
+    <!-- Main auth container (No hero, no navbar, no footer) -->
+    <main class="auth-main">
+      <div class="auth-card-wrap">
+        <!-- Tabs: Sign In / Create Account -->
+        <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="contact-tabs" role="tablist" aria-label="Account options" style="margin-top: 0;">
+            <button type="button" id="tab-btn-signin" class="contact-tab-btn is-active" role="tab" aria-selected="true" aria-controls="login-form">
+              Sign In
+            </button>
+            <button type="button" id="tab-btn-signup" class="contact-tab-btn" role="tab" aria-selected="false" aria-controls="signup-form">
+              Create Account
+            </button>
+          </div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="login-form" class="form-card" data-form novalidate style="display: flex; flex-direction: column; gap: var(--space-4);">
+          <div style="padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); margin-bottom: 0.25rem;">
+            <h1 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin: 0 0 0.25rem;">Sign In to Your Account</h1>
+            <p style="font-size: 0.85rem; color: var(--ink-soft); margin: 0;">Welcome back! Enter your registered rider credentials.</p>
+          </div>
+
+          <div id="login-success" hidden style="background: var(--accent-soft); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 1rem; color: var(--ink);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Signed In Successfully!
+            </div>
+            <p style="font-size: 0.85rem; margin: 0; color: var(--ink-soft);">
+              Welcome back, <strong id="logged-user-name" style="color: var(--accent);">Rider</strong>. You are now logged in.
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="login-email">Email Address *</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" placeholder="rider@veloxcycles.com" required />
+            <span class="field-error" hidden></span>
+          </div>
+
+          <div class="field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.15rem;">
+              <label for="login-password" style="margin: 0;">Password *</label>
+              <a href="#forgot" id="btn-forgot-password" style="font-size: 0.78rem; color: var(--accent); font-weight: 600; text-decoration: none;">Forgot Password?</a>
+            </div>
+            <div class="pwd-input-wrap">
+              <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required />
+              <button type="button" class="pwd-toggle" data-target="login-password" aria-label="Toggle password visibility">
+                <svg class="eye-open" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error" hidden></span>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; font-size: 0.85rem; color: var(--ink-soft); margin-top: -0.25rem;">
+            <label style="display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; text-transform: none; letter-spacing: normal; font-size: 0.85rem; font-weight: 400;">
+              <input type="checkbox" id="remember-me" checked style="accent-color: var(--accent); width: auto;" />
+              Remember me on this browser
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff; width: 100%; justify-content: center; padding: 0.85rem 1.5rem; font-weight: 700; margin-top: 0.25rem; border-radius: 9999px;">
+            Sign In to Account
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <!-- Social Logins (Google & Apple) -->
+          <div class="auth-divider">
+            <div class="auth-divider__line"></div>
+            <span class="auth-divider__text">Or continue with</span>
+            <div class="auth-divider__line"></div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <button type="button" class="btn--social" data-social="Google" aria-label="Sign in with Google">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Google</span>
+            </button>
+
+            <button type="button" class="btn--social" data-social="Apple" aria-label="Sign in with Apple">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.1.65-2.77 1.44-.58.68-1.07 1.74-.94 2.8.02 0 .04 0 .06 0 1.01 0 2.03-.62 2.64-1.37z"/>
+              </svg>
+              <span>Apple</span>
+            </button>
+          </div>
+
+          <div style="text-align: center; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.5rem;">
+            Don't have an account yet?
+            <button type="button" id="switch-to-signup" style="background: none; border: none; padding: 0; color: var(--accent); font-weight: 700; cursor: pointer; text-decoration: underline; font-size: inherit;">Create Account</button>
+          </div>
+        </form>
+
+        <!-- SIGN UP FORM -->
+        <form id="signup-form" class="form-card" data-form novalidate style="display: none; flex-direction: column; gap: var(--space-4);">
+          <div style="padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); margin-bottom: 0.25rem;">
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--ink); margin: 0 0 0.25rem;">Create Rider Account</h2>
+            <p style="font-size: 0.85rem; color: var(--ink-soft); margin: 0;">Join 4,500+ cyclists in Chennai. Enjoy free checkups &amp; club rides.</p>
+          </div>
+
+          <div id="signup-success" hidden style="background: var(--accent-soft); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 1rem; color: var(--ink);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Account Created Successfully!
+            </div>
+            <p style="font-size: 0.85rem; margin: 0; color: var(--ink-soft);">
+              Welcome to Velox Cycles! Your rider profile has been activated.
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="reg-name">Full Name *</label>
+            <input id="reg-name" name="name" type="text" autocomplete="name" placeholder="Rider Name" required data-min="2" />
+            <span class="field-error" hidden></span>
+          </div>
+
+          <div class="field">
+            <label for="reg-email">Email Address *</label>
+            <input id="reg-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <span class="field-error" hidden></span>
+          </div>
+
+          <div class="field">
+            <label for="reg-phone">Mobile Phone (optional)</label>
+            <input id="reg-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98401 23456" data-type="phone" />
+            <span class="field-error" hidden></span>
+          </div>
+
+          <div class="field">
+            <label for="reg-preference">Primary Riding Style</label>
+            <select id="reg-preference" name="ridingStyle">
+              <option value="Road Racing & Endurance">Road Racing &amp; Endurance</option>
+              <option value="Mountain & Trail (MTB)">Mountain &amp; Trail (MTB)</option>
+              <option value="Gravel & Adventure">Gravel &amp; Adventure</option>
+              <option value="City Commuter & Hybrid">City Commuter &amp; Hybrid</option>
+              <option value="Electric E-Bike">Electric E-Bike</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="reg-password">Password *</label>
+            <div class="pwd-input-wrap">
+              <input id="reg-password" name="password" type="password" autocomplete="new-password" placeholder="Minimum 6 characters" required data-min="6" />
+              <button type="button" class="pwd-toggle" data-target="reg-password" aria-label="Toggle password visibility">
+                <svg class="eye-open" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error" hidden></span>
+          </div>
+
+          <div style="font-size: 0.82rem; color: var(--ink-soft); line-height: 1.4;">
+            <label style="display: inline-flex; align-items: flex-start; gap: 0.5rem; cursor: pointer; text-transform: none; letter-spacing: normal; font-weight: 400;">
+              <input type="checkbox" id="reg-terms" required style="accent-color: var(--accent); margin-top: 3px;" />
+              <span>I agree to Velox Cycles <a href="./Terms-of-service.html" style="color: var(--accent); text-decoration: underline;" target="_blank">Terms of Service</a> and <a href="./Privacy-policy.html" style="color: var(--accent); text-decoration: underline;" target="_blank">Privacy Policy</a>.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="background: var(--accent); border-color: var(--accent); color: #fff; width: 100%; justify-content: center; padding: 0.85rem 1.5rem; font-weight: 700; margin-top: 0.25rem; border-radius: 9999px;">
+            Create Velox Account
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <!-- Social Sign Up (Google & Apple) -->
+          <div class="auth-divider">
+            <div class="auth-divider__line"></div>
+            <span class="auth-divider__text">Or sign up with</span>
+            <div class="auth-divider__line"></div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <button type="button" class="btn--social" data-social="Google" aria-label="Sign up with Google">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Google</span>
+            </button>
+
+            <button type="button" class="btn--social" data-social="Apple" aria-label="Sign up with Apple">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.1.65-2.77 1.44-.58.68-1.07 1.74-.94 2.8.02 0 .04 0 .06 0 1.01 0 2.03-.62 2.64-1.37z"/>
+              </svg>
+              <span>Apple</span>
+            </button>
+          </div>
+
+          <div style="text-align: center; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.5rem;">
+            Already have an account?
+            <button type="button" id="switch-to-signin" style="background: none; border: none; padding: 0; color: var(--accent); font-weight: 700; cursor: pointer; text-decoration: underline; font-size: inherit;">Sign In</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="../js/data.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/form-validation.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var tabSignIn = document.getElementById('tab-btn-signin');
+        var tabSignUp = document.getElementById('tab-btn-signup');
+        var formSignIn = document.getElementById('login-form');
+        var formSignUp = document.getElementById('signup-form');
+        var switchToSignUp = document.getElementById('switch-to-signup');
+        var switchToSignIn = document.getElementById('switch-to-signin');
+        var btnForgot = document.getElementById('btn-forgot-password');
+
+        function showSignIn() {
+          if (!tabSignIn || !tabSignUp || !formSignIn || !formSignUp) return;
+          tabSignIn.classList.add('is-active');
+          tabSignIn.setAttribute('aria-selected', 'true');
+          tabSignUp.classList.remove('is-active');
+          tabSignUp.setAttribute('aria-selected', 'false');
+          formSignIn.style.display = 'flex';
+          formSignUp.style.display = 'none';
+        }
+
+        function showSignUp() {
+          if (!tabSignIn || !tabSignUp || !formSignIn || !formSignUp) return;
+          tabSignUp.classList.add('is-active');
+          tabSignUp.setAttribute('aria-selected', 'true');
+          tabSignIn.classList.remove('is-active');
+          tabSignIn.setAttribute('aria-selected', 'false');
+          formSignUp.style.display = 'flex';
+          formSignIn.style.display = 'none';
+        }
+
+        if (tabSignIn) tabSignIn.addEventListener('click', showSignIn);
+        if (tabSignUp) tabSignUp.addEventListener('click', showSignUp);
+        if (switchToSignUp) switchToSignUp.addEventListener('click', showSignUp);
+        if (switchToSignIn) switchToSignIn.addEventListener('click', showSignIn);
+
+        // Check hash on load
+        if (window.location.hash === '#signup') {
+          showSignUp();
+        }
+
+        // Password visibility toggles
+        document.querySelectorAll('.pwd-toggle').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var targetId = btn.getAttribute('data-target');
+            var input = document.getElementById(targetId);
+            if (!input) return;
+            var isPass = input.type === 'password';
+            input.type = isPass ? 'text' : 'password';
+            var eyeOpen = btn.querySelector('.eye-open');
+            var eyeClosed = btn.querySelector('.eye-closed');
+            if (eyeOpen && eyeClosed) {
+              eyeOpen.style.display = isPass ? 'none' : 'block';
+              eyeClosed.style.display = isPass ? 'block' : 'none';
+            }
+          });
+        });
+
+        // Social logins (Google & Apple)
+        document.querySelectorAll('.btn--social').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var provider = btn.getAttribute('data-social') || 'Social provider';
+            if (window.StrideToast) {
+              window.StrideToast('Connecting to ' + provider + '...', 'info');
+            }
+            setTimeout(function () {
+              try {
+                localStorage.setItem('velox-user', JSON.stringify({ email: 'rider@' + provider.toLowerCase() + '.com', name: provider + ' Rider' }));
+              } catch (e) {}
+              if (window.StrideToast) {
+                window.StrideToast('Signed in with ' + provider + '! Welcome.', 'success');
+              }
+              var successEl = document.getElementById('login-success');
+              var nameEl = document.getElementById('logged-user-name');
+              if (nameEl) nameEl.textContent = provider + ' Rider';
+              if (successEl) {
+                successEl.hidden = false;
+                successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }
+            }, 500);
+          });
+        });
+
+        // Forgot password notice
+        if (btnForgot) {
+          btnForgot.addEventListener('click', function (e) {
+            e.preventDefault();
+            var email = (document.getElementById('login-email') || {}).value || 'your registered email';
+            if (window.StrideToast) {
+              window.StrideToast('Password reset link sent to ' + email, 'info');
+            } else {
+              alert('Password reset link sent to ' + email);
+            }
+          });
+        }
+
+        // Login submit handling
+        if (formSignIn) {
+          formSignIn.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var email = document.getElementById('login-email').value;
+            var name = email ? email.split('@')[0] : 'Rider';
+            name = name.charAt(0).toUpperCase() + name.slice(1);
+
+            var successEl = document.getElementById('login-success');
+            var nameEl = document.getElementById('logged-user-name');
+            if (nameEl) nameEl.textContent = name;
+            if (successEl) {
+              successEl.hidden = false;
+              successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            try {
+              localStorage.setItem('velox-user', JSON.stringify({ email: email, name: name }));
+            } catch (err) {}
+
+            if (window.StrideToast) {
+              window.StrideToast('Welcome back, ' + name + '!', 'success');
+            }
+          });
+        }
+
+        // Sign up submit handling
+        if (formSignUp) {
+          formSignUp.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = document.getElementById('reg-name').value || 'Rider';
+            var email = document.getElementById('reg-email').value;
+
+            var successEl = document.getElementById('signup-success');
+            if (successEl) {
+              successEl.hidden = false;
+              successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            try {
+              localStorage.setItem('velox-user', JSON.stringify({ email: email, name: name }));
+            } catch (err) {}
+
+            if (window.StrideToast) {
+              window.StrideToast('Account created! Welcome, ' + name + '.', 'success');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

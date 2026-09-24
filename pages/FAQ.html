@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bicycle sizing guide, shipping & delivery, workshop tune-up procedures, e-bike battery care, and warranty FAQs at Velox Cycles."
+    />
+    <title>Cycling FAQs &amp; Sizing Guide — Velox Cycles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    
+    <link rel="icon" href="../assets/logo.png" />
+    <script>
+      try {
+        var t = localStorage.getItem('stride-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        var d = localStorage.getItem('stride-dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <!-- navbar.js injects the shared utility bar, header and footer here -->
+
+    <main id="top">
+      <!-- HERO + SEARCH -->
+      <section class="page-hero page-hero--bg page-hero--center" aria-labelledby="faq-title">
+        <div class="page-hero__bg-media">
+          <img
+            src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1600&auto=format&fit=crop"
+            alt="Velox Cycles rider assistance and workshop desk"
+            class="page-hero__bg-img"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="page-hero__bg-overlay"></div>
+        </div>
+        <div class="page-hero__inner">
+          <span class="page-hero__eyebrow">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            Rider Knowledge Base
+          </span>
+          <h1 id="faq-title" class="page-hero__title">Frequently Asked Questions.</h1>
+          <p class="page-hero__lede">
+            Frame sizing, doorstep delivery &amp; assembly, workshop tune-ups, e-bike battery care, and warranty policies.
+          </p>
+          <div class="blog-toolbar" style="justify-content:center;margin-top:var(--space-8);">
+            <label class="blog-toolbar__search" style="max-width:32rem;">
+              <span class="visually-hidden">Search FAQs</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input type="search" placeholder="Search questions… e.g. sizing, tune-up, assembly" aria-label="Search FAQs" data-faq-search />
+            </label>
+          </div>
+          <p class="page-hero__meta" data-faq-results aria-live="polite">Comprehensive answers across 4 cycling topics</p>
+        </div>
+      </section>
+
+      <!-- FAQ TOPICS -->
+      <section class="section" aria-label="FAQ topics">
+        <div class="wrap wrap--narrow">
+          
+          <!-- Bicycle Sizing & Fit -->
+          <h2 class="sec-title" style="margin-bottom:var(--space-6);">Bicycle Sizing &amp; 3D Fitting</h2>
+          <div class="accordion" data-faq-group data-reveal style="margin-bottom:var(--space-12);">
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>How do I choose the correct frame size?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Bicycle sizing is based on height and inseam standover: Small (50-52cm for 160-170cm), Medium (54cm for 170-178cm), Large (56cm for 178-185cm), and Extra Large (58cm+ for 185cm+). Our studio offers complimentary 3D laser dynamic fitting with all purchases.</div></div>
+            </div>
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>What is the difference between Endurance and Race road geometry?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Race geometry (like the Velox Aero SLR 9) has a lower stack and longer reach for optimal aerodynamic speed. Endurance geometry has a slightly taller head tube to keep you comfortable over 100km+ long-distance rides without neck fatigue.</div></div>
+            </div>
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>Can I test ride bikes before buying?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Yes! Our flagship store on Khader Nawaz Khan Road has an extensive demo fleet. Bring a photo ID and helmet (or borrow one from us) for a test ride around our private circuit.</div></div>
+            </div>
+          </div>
+
+          <!-- Delivery & Assembly -->
+          <h2 class="sec-title" style="margin-bottom:var(--space-6);">Delivery &amp; Doorstep Assembly</h2>
+          <div class="accordion" data-faq-group data-reveal style="margin-bottom:var(--space-12);">
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>How does doorstep bike delivery work?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">In Chennai, Bengaluru, and Hyderabad, bikes arrive 100% assembled and hand-delivered in our custom Velox transit vans by a technician who sets your saddle height. For other locations, bikes arrive 95% assembled in heavy-duty flight boxes with pedal wrench, hex multi-tool, and torque wrench included.</div></div>
+            </div>
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>Is shipping free?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Free doorstep insured freight delivery on all bicycles over ₹25,000 across India. Accessories ship free on orders over ₹2,499.</div></div>
+            </div>
+          </div>
+
+          <!-- Workshop & Maintenance -->
+          <h2 class="sec-title" style="margin-bottom:var(--space-6);">Workshop &amp; Service Appointments</h2>
+          <div class="accordion" data-faq-group data-reveal style="margin-bottom:var(--space-12);">
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>How often should I tune up my bicycle?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Active riders (3-4 times a week) should get a Comprehensive Tune-Up every 6 months or 2,500 km. Weekend riders should schedule a Safety Tune-Up once a year. Chains should be checked for stretch every 1,000 km.</div></div>
+            </div>
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>How do I book a workshop service slot?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Simply visit our <a href="./booking.html" style="color: var(--accent); font-weight: 700;">Service Appointment Booking Page</a>, pick your bicycle model, select your service tier, choose an express or drop-off time slot, and receive an instant reference number.</div></div>
+            </div>
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>Do you service electric bicycles?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Yes! We are an authorized service center for Bosch eBike Systems, Shimano STEPS, and Giant SyncDrive (Yamaha), equipped with official diagnostic computers, battery analyzers, and firmware programmers.</div></div>
+            </div>
+          </div>
+
+          <!-- Warranty & Guarantees -->
+          <h2 class="sec-title" style="margin-bottom:var(--space-6);">Warranties &amp; Guarantees</h2>
+          <div class="accordion" data-faq-group data-reveal style="margin-bottom:var(--space-12);">
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>What does the manufacturer frame warranty cover?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">Trek, Specialized, Cannondale, and Giant frames purchased through Velox Cycles feature lifetime structural warranties against manufacturing defects for the original purchaser. Components (Shimano, SRAM) carry a 2-year factory replacement warranty.</div></div>
+            </div>
+            <div class="acc" data-accordion>
+              <button class="acc__btn" type="button" data-accordion-toggle aria-expanded="false">
+                <span>What is the 30-Day Post-Delivery Tune-Up?</span>
+                <svg class="acc__icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+              <div class="acc__panel"><div class="acc__panel-inner">New brake and gear cables naturally stretch slightly during their first 100-200 km. Bring your bike to our workshop anytime within 30 days of purchase for a free cable re-tensioning, spoke check, and bolt re-torque.</div></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/data.js" defer></script>
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>
